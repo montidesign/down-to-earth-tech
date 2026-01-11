@@ -41,7 +41,8 @@
       "Bash(do sed -i 's/py-12 bg-\\\\[rgba\\(49,100,138,0\\\\.9\\)\\\\]/py-[51px] bg-[rgba\\(49,100,138,0.9\\)]/g' \"$file\")",
       "Bash(for file in src/pages/{managed-it-consulting-services-and-support,lenovo-servers-and-workstations,computer-network-support,business-surveillance-systems,about-us,contact}.astro)",
       "Bash(do sed -i 's/py-\\\\[51px\\\\] bg-\\\\[rgba\\(49,100,138,0\\\\.9\\)\\\\]/py-12 bg-[rgba\\(49,100,138,0.9\\)]/g' \"$file\")",
-      "Bash(do sed -i 's/mt-\\\\[123px\\\\]/mt-[173px]/g' \"$file\")"
+      "Bash(do sed -i 's/mt-\\\\[123px\\\\]/mt-[173px]/g' \"$file\")",
+      "Bash(do sed -i 's/py-12 bg-\\\\[rgba\\(49,100,138,0\\\\.9\\)\\\\]/py-14 bg-[rgba\\(49,100,138,0.9\\)]/g' \"$file\")"
     ]
   }
 }
