@@ -36,7 +36,9 @@
       "mcp__plugin_playwright_playwright__browser_evaluate",
       "mcp__plugin_playwright_playwright__browser_resize",
       "Bash(grep:*)",
-      "Bash(npx astro check:*)"
+      "Bash(npx astro check:*)",
+      "Bash(for file in src/pages/{lenovo-servers-and-workstations,computer-network-support,business-surveillance-systems,about-us,contact}.astro)",
+      "Bash(do sed -i 's/py-12 bg-\\\\[rgba\\(49,100,138,0\\\\.9\\)\\\\]/py-[51px] bg-[rgba\\(49,100,138,0.9\\)]/g' \"$file\")"
     ]
   }
 }
