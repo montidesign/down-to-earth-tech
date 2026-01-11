@@ -1,22 +1,22 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
-import VideoBackground from '../components/VideoBackground.astro';
-import Cog6Tooth from 'astro-heroicons/solid/Cog6Tooth.astro';
+import ShoppingCart from 'astro-heroicons/outline/ShoppingCart.astro';
+import ComputerDesktop from 'astro-heroicons/outline/ComputerDesktop.astro';
+import LifeBuoy from 'astro-heroicons/outline/LifeBuoy.astro';
 ---
 
 <Layout title="Managed IT Consulting & Support - Down To Earth Technology">
-	<!-- Hero Section -->
-	<section class="relative min-h-[400px] flex items-center justify-center">
-		<VideoBackground />
-		<div class="relative z-10 text-center text-white px-4">
-			<h1 class="font-montserrat font-bold uppercase text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-4 tracking-[-1.875px] leading-none">
+	<!-- Banner Section with Blue Background -->
+	<section class="relative pt-[200px] pb-20 bg-[rgba(49,100,138,0.9)]">
+		<div class="max-w-[1080px] mx-auto px-4">
+			<h1 class="font-montserrat font-bold uppercase text-white text-center text-7xl mb-0 tracking-[-1.875px] leading-none">
 				Down to Earth Technology:<br/>IT Support
 			</h1>
 		</div>
 	</section>
 
-	<!-- Section 1: Intro (Red/Coral Background) -->
+	<!-- Red Section -->
 	<section class="relative py-20 bg-[rgb(226,77,61)]">
 		<div class="max-w-[1080px] mx-auto px-4">
 			<h2 class="font-montserrat font-bold text-white mb-6 text-center text-3xl tracking-[-1px]">Down to Earth Technology keeps your business running on solid ground.</h2>
@@ -26,16 +26,16 @@ import Cog6Tooth from 'astro-heroicons/solid/Cog6Tooth.astro';
 		</div>
 	</section>
 
-	<!-- Section 2: 3 Columns with Image -->
+	<!-- Content with Image Section -->
 	<section class="relative py-20 bg-white">
 		<div class="max-w-[1080px] mx-auto px-4">
 			<div class="grid md:grid-cols-2 gap-8 mb-12">
 				<div>
-					<h3 class="font-montserrat font-bold mb-4" class="text-[23px] text-[rgb(49,100,138)] tracking-[-1px] leading-[24.15px]">Prompt and Professional IT Services</h3>
+					<h3 class="font-montserrat font-bold mb-4 text-2xl text-[rgb(49,100,138)] tracking-[-1px]">Prompt and Professional IT Services</h3>
 					<p class="text-gray-800 text-xl font-cuprum leading-relaxed mb-4">
 						Technology keeps your business going. Many IT support companies work limited hours and make limited promises. Down to Earth technologies promises all our customers:
 					</p>
-					<blockquote class="border-l-4 border-gray-400 pl-4 mb-4 italic text-gray-800 text-xl font-cuprum leading-relaxed">
+					<blockquote class="border-l-4 border-[rgb(49,100,138)] pl-4 mb-4 text-gray-800 text-xl font-cuprum leading-relaxed">
 						We will respond to any IT support requests with a course of action within one business day.
 					</blockquote>
 					<p class="text-gray-800 text-xl font-cuprum leading-relaxed mb-4">
@@ -52,19 +52,19 @@ import Cog6Tooth from 'astro-heroicons/solid/Cog6Tooth.astro';
 
 			<div class="grid md:grid-cols-3 gap-8">
 				<div>
-					<h3 class="font-montserrat font-bold mb-4" class="text-[23px] text-[rgb(49,100,138)] tracking-[-1px] leading-[24.15px]">Managed Hardware and Software IT Consulting Services</h3>
+					<h3 class="font-montserrat font-bold mb-4 text-2xl text-[rgb(49,100,138)] tracking-[-1px]">Managed Hardware and Software IT Consulting Services</h3>
 					<p class="text-gray-800 text-xl font-cuprum leading-relaxed">
 						Your business has multiple systems that work together to keep it running: computers, servers, mobile devices, software, apps, and more. Down to Earth Technology business IT support works with every part of your system, providing on-site and remote IT support, depending on which part of the system needs our attention.
 					</p>
 				</div>
 				<div>
-					<h3 class="font-montserrat font-bold mb-4" class="text-[23px] text-[rgb(49,100,138)] tracking-[-1px] leading-[24.15px]">IT Solutions for Every Size Business</h3>
+					<h3 class="font-montserrat font-bold mb-4 text-2xl text-[rgb(49,100,138)] tracking-[-1px]">IT Solutions for Every Size Business</h3>
 					<p class="text-gray-800 text-xl font-cuprum leading-relaxed">
 						For the best IT support for small business, look no further. Down to Earth provides IT services for business of all sizes. From the smallest medical offices to the largest network organizations, Down to Earth works proactively behind-the-scenes to keep businesses in Waco working around the clock.
 					</p>
 				</div>
 				<div>
-					<h3 class="font-montserrat font-bold mb-4" class="text-[23px] text-[rgb(49,100,138)] tracking-[-1px] leading-[24.15px]">Proactive IT Support</h3>
+					<h3 class="font-montserrat font-bold mb-4 text-2xl text-[rgb(49,100,138)] tracking-[-1px]">Proactive IT Support</h3>
 					<p class="text-gray-800 text-xl font-cuprum leading-relaxed">
 						Down to Earth Technology professionals help you establish a maintenance routine based on your needs. Every IT consulting package includes proactive solutions designed to help you prevent "technical issues" before they happen. Not sure how to keep your computers in tip-top shape? Our IT tech support experts are here to help.
 					</p>
@@ -73,82 +73,78 @@ import Cog6Tooth from 'astro-heroicons/solid/Cog6Tooth.astro';
 		</div>
 	</section>
 
-	<!-- Section 3: Hardware and Software Managed IT Services (4 Icon Boxes) -->
-	<section class="relative py-20" class="bg-white/95">
+	<!-- Hardware and Software Managed IT Services -->
+	<section class="relative py-20 bg-white">
 		<div class="max-w-[1080px] mx-auto px-4">
-			<h2 class="font-montserrat font-bold mb-4 text-center" class="text-[30px] text-[rgb(226,77,61)] tracking-[-1px] leading-[24px]">Hardware and Software Managed IT Services</h2>
+			<h2 class="font-montserrat font-bold mb-4 text-center text-[30px] text-[rgb(226,77,61)] tracking-[-1px]">Hardware and Software Managed IT Services</h2>
 			<p class="text-gray-800 text-xl font-cuprum leading-relaxed text-center mb-12">
 				You are an expert at what you do. Down to Earth Technology are your IT infrastructure experts. We offer corporate IT solutions for your company's hardware and software, and we offer support on a number of systems.
 			</p>
 
-			<div class="grid md:grid-cols-2 gap-8">
-				<div class="flex gap-4">
-					<div class="flex-shrink-0">
-						<div class="rounded-full p-4" class="border-2 border-[#95c3e3]">
-							<Cog6Tooth class="w-12 h-12 text-[#e24d3d]" />
+			<div class="grid md:grid-cols-2 gap-12">
+				<!-- POS Hardware -->
+				<div class="text-center">
+					<div class="flex justify-center mb-4">
+						<div class="rounded-full p-4 border-2 border-[#95c3e3] inline-block">
+							<ShoppingCart class="w-12 h-12 text-[#e24d3d]" />
 						</div>
 					</div>
-					<div>
-						<h4 class="font-montserrat font-bold mb-2" class="text-lg text-[rgb(49,100,138)] tracking-[-1px]">Point of Sale (POS) Hardware</h4>
-						<p class="text-gray-800 text-xl font-cuprum leading-relaxed">
-							Down to Earth Technology provides IT consulting for your POS systems. We have the hardware and the knowledge to keep your POS system selling.
-						</p>
-					</div>
+					<h4 class="font-montserrat font-bold mb-2 text-lg text-[rgb(49,100,138)] tracking-[-1px]">Point of Sale (POS) Hardware</h4>
+					<p class="text-gray-800 text-xl font-cuprum leading-relaxed">
+						Down to Earth Technology provides IT consulting for your POS systems. We have the hardware and the knowledge to keep your POS system selling.
+					</p>
 				</div>
 
-				<div class="flex gap-4">
-					<div class="flex-shrink-0">
-						<div class="rounded-full p-4" class="border-2 border-[#95c3e3]">
-							<Cog6Tooth class="w-12 h-12 text-[#e24d3d]" />
+				<!-- Dell Systems -->
+				<div class="text-center">
+					<div class="flex justify-center mb-4">
+						<div class="rounded-full p-4 border-2 border-[#95c3e3] inline-block">
+							<ComputerDesktop class="w-12 h-12 text-[#e24d3d]" />
 						</div>
 					</div>
-					<div>
-						<h4 class="font-montserrat font-bold mb-2" class="text-lg text-[rgb(49,100,138)] tracking-[-1px]">Dell Systems Support</h4>
-						<p class="text-gray-800 text-xl font-cuprum leading-relaxed">
-							Down to Earth Technology provides the best Dell IT support in the Waco, Texas area. Our IT professionals are familiar with all Dell systems, and we have the hardware for the upgrades your system needs.
-						</p>
-					</div>
+					<h4 class="font-montserrat font-bold mb-2 text-lg text-[rgb(49,100,138)] tracking-[-1px]">Dell Systems Support</h4>
+					<p class="text-gray-800 text-xl font-cuprum leading-relaxed">
+						Down to Earth Technology provides the best Dell IT support in the Waco, Texas area. Our IT professionals are familiar with all Dell systems, and we have the hardware for the upgrades your system needs.
+					</p>
 				</div>
 
-				<div class="flex gap-4">
-					<div class="flex-shrink-0">
-						<div class="rounded-full p-4" class="border-2 border-[#95c3e3]">
-							<Cog6Tooth class="w-12 h-12 text-[#e24d3d]" />
+				<!-- HP Systems -->
+				<div class="text-center">
+					<div class="flex justify-center mb-4">
+						<div class="rounded-full p-4 border-2 border-[#95c3e3] inline-block">
+							<ComputerDesktop class="w-12 h-12 text-[#e24d3d]" />
 						</div>
 					</div>
-					<div>
-						<h4 class="font-montserrat font-bold mb-2" class="text-lg text-[rgb(49,100,138)] tracking-[-1px]">HP Systems Support</h4>
-						<p class="text-gray-800 text-xl font-cuprum leading-relaxed">
-							Down to Earth Technology IT support experts know about both the most classic and the most updated HP systems. Our HP IT support team knows the ins and outs of HP computers, servers, and hardware, and we supply a full line of HP hardware for system upgrades.
-						</p>
-					</div>
+					<h4 class="font-montserrat font-bold mb-2 text-lg text-[rgb(49,100,138)] tracking-[-1px]">HP Systems Support</h4>
+					<p class="text-gray-800 text-xl font-cuprum leading-relaxed">
+						Down to Earth Technology IT support experts know about both the most classic and the most updated HP systems. Our HP IT support team knows the ins and outs of HP computers, servers, and hardware, and we supply a full line of HP hardware for system upgrades.
+					</p>
 				</div>
 
-				<div class="flex gap-4">
-					<div class="flex-shrink-0">
-						<div class="rounded-full p-4" class="border-2 border-[#95c3e3]">
-							<Cog6Tooth class="w-12 h-12 text-[#e24d3d]" />
+				<!-- Remote or On-Site -->
+				<div class="text-center">
+					<div class="flex justify-center mb-4">
+						<div class="rounded-full p-4 border-2 border-[#95c3e3] inline-block">
+							<LifeBuoy class="w-12 h-12 text-[#e24d3d]" />
 						</div>
 					</div>
-					<div>
-						<h4 class="font-montserrat font-bold mb-2" class="text-lg text-[rgb(49,100,138)] tracking-[-1px]">Remote or On-Site IT Services</h4>
-						<p class="text-gray-800 text-xl font-cuprum leading-relaxed">
-							Down to Earth Technology performs top IT services for small businesses, managing your IT need from an off-site location. Depending on your needs and the system of your business, one of our certified technicians may visit your office or locations to perform upgrades, maintenance, and necessary corporate data backup.
-						</p>
-					</div>
+					<h4 class="font-montserrat font-bold mb-2 text-lg text-[rgb(49,100,138)] tracking-[-1px]">Remote or On-Site IT Services</h4>
+					<p class="text-gray-800 text-xl font-cuprum leading-relaxed">
+						Down to Earth Technology performs top IT services for small businesses, managing your IT need from an off-site location. Depending on your needs and the system of your business, one of our certified technicians may visit your office or locations to perform upgrades, maintenance, and necessary corporate data backup.
+					</p>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<!-- Section 4: Business IT Solutions (Red Background) -->
-	<section class="relative py-20" class="bg-[rgb(226,77,61)]">
+	<!-- Business IT Solutions Banner -->
+	<section class="relative py-20 bg-[rgb(226,77,61)]">
 		<div class="max-w-[1080px] mx-auto px-4">
-			<h1 class="font-montserrat font-bold uppercase text-white text-center mb-8 text-4xl sm:text-5xl" class="tracking-[-1.875px] leading-none">Business IT Solutions<br/>for Every Size Company</h1>
+			<h1 class="font-montserrat font-bold uppercase text-white text-center text-5xl md:text-7xl tracking-[-1.875px] leading-none">Business IT Solutions<br/>for Every Size Company</h1>
 		</div>
 	</section>
 
-	<!-- Section 5: Content Paragraphs -->
+	<!-- Business IT Solutions Content -->
 	<section class="relative py-20 bg-white">
 		<div class="max-w-[1080px] mx-auto px-4">
 			<div class="space-y-4 text-gray-800 text-xl font-cuprum leading-relaxed">
@@ -159,12 +155,12 @@ import Cog6Tooth from 'astro-heroicons/solid/Cog6Tooth.astro';
 		</div>
 	</section>
 
-	<!-- Section 6: Hidden Proactive IT Consulting -->
-	<section class="relative py-20" class="bg-white/95">
+	<!-- Hidden Proactive IT Consulting -->
+	<section class="relative py-20 bg-white/95">
 		<div class="max-w-[1080px] mx-auto px-4">
 			<div class="text-center mb-12">
-				<h2 class="font-montserrat font-bold mb-2" class="text-[30px] text-[rgb(226,77,61)] tracking-[-1px] leading-[24px]">Hidden Proactive IT Consulting</h2>
-				<h3 class="font-montserrat font-bold" class="text-[23px] text-[rgb(49,100,138)] tracking-[-1px] leading-[24.15px]">So No One Notices</h3>
+				<h2 class="font-montserrat font-bold mb-2 text-[30px] text-[rgb(226,77,61)] tracking-[-1px]">Hidden Proactive IT Consulting</h2>
+				<h3 class="font-montserrat font-bold text-2xl text-[rgb(49,100,138)] tracking-[-1px]">So No One Notices</h3>
 			</div>
 
 			<div class="space-y-4 text-gray-800 text-xl font-cuprum leading-relaxed mb-12">
@@ -176,25 +172,25 @@ import Cog6Tooth from 'astro-heroicons/solid/Cog6Tooth.astro';
 
 			<div class="grid md:grid-cols-4 gap-8 mb-12">
 				<div>
-					<h4 class="font-montserrat font-bold mb-2" class="text-lg text-[rgb(49,100,138)] tracking-[-1px]">Anti Virus Software</h4>
+					<h4 class="font-montserrat font-bold mb-2 text-lg text-[rgb(49,100,138)] tracking-[-1px]">Anti Virus Software</h4>
 					<p class="text-gray-800 text-xl font-cuprum leading-relaxed">
 						Viruses can be attached to downloads, emails, corrupted websites, and other sources when your computer or servers are connected to the internet. We help you shield your system.
 					</p>
 				</div>
 				<div>
-					<h4 class="font-montserrat font-bold mb-2" class="text-lg text-[rgb(49,100,138)] tracking-[-1px]">Adware Protection</h4>
+					<h4 class="font-montserrat font-bold mb-2 text-lg text-[rgb(49,100,138)] tracking-[-1px]">Adware Protection</h4>
 					<p class="text-gray-800 text-xl font-cuprum leading-relaxed">
 						Adware may be attached to downloaded software, showing you advertisements in your computer programs and collecting your personal information. We help you keep your system free of unwanted data collection and ads that clutter your workspace.
 					</p>
 				</div>
 				<div>
-					<h4 class="font-montserrat font-bold mb-2" class="text-lg text-[rgb(49,100,138)] tracking-[-1px]">Spyware Protection</h4>
+					<h4 class="font-montserrat font-bold mb-2 text-lg text-[rgb(49,100,138)] tracking-[-1px]">Spyware Protection</h4>
 					<p class="text-gray-800 text-xl font-cuprum leading-relaxed">
 						Spyware can infiltrate your system when you are online, spying on your activities, tracking your personal information and sending it to another computer. We help you keep your system locked up.
 					</p>
 				</div>
 				<div>
-					<h4 class="font-montserrat font-bold mb-2" class="text-lg text-[rgb(49,100,138)] tracking-[-1px]">Malware Protection</h4>
+					<h4 class="font-montserrat font-bold mb-2 text-lg text-[rgb(49,100,138)] tracking-[-1px]">Malware Protection</h4>
 					<p class="text-gray-800 text-xl font-cuprum leading-relaxed">
 						Malware is harmful software that seeks to unlock encrypted or secure information on your network. It can bring your entire IT system down. We help keep your system safe.
 					</p>
@@ -202,24 +198,24 @@ import Cog6Tooth from 'astro-heroicons/solid/Cog6Tooth.astro';
 			</div>
 
 			<div class="space-y-4 text-gray-800 text-xl font-cuprum leading-relaxed">
-				<h3 class="font-montserrat font-bold" class="text-[23px] text-[rgb(49,100,138)] tracking-[-1px] leading-[24.15px]">Proactive Protection for Your Entire Business</h3>
+				<h3 class="font-montserrat font-bold text-2xl text-[rgb(49,100,138)] tracking-[-1px]">Proactive Protection for Your Entire Business</h3>
 				<p>Our IT technical support professionals help increase your HR department's productivity, because they never have the computers go down. We support your administrative efficiency, making sure that everyone at your business can do what they do best. We help your POS registers keep up with heavy sales and data flow.</p>
 				<p>With Down to Earth Technology, you never worry about "technical difficulties" that stop the show.</p>
 			</div>
 		</div>
 	</section>
 
-	<!-- Section 7: Experienced IT Solutions (Blue Background) -->
-	<section class="relative py-20" class="bg-[rgb(49,100,138)]">
+	<!-- Experienced IT Solutions Banner -->
+	<section class="relative py-20 bg-[rgba(49,100,138,0.9)]">
 		<div class="max-w-[1080px] mx-auto px-4">
-			<div class="text-center mb-8">
-				<h1 class="font-montserrat font-bold uppercase text-white text-4xl sm:text-5xl mb-4" class="tracking-[-1.875px] leading-none">Experienced IT Solutions Company to Benefit You</h1>
-				<h2 class="font-montserrat font-bold text-white text-3xl" class="tracking-[-1px]">Training and Knowledge that Pushes Boundaries</h2>
+			<div class="text-center">
+				<h1 class="font-montserrat font-bold uppercase text-white text-5xl md:text-7xl mb-4 tracking-[-1.875px] leading-none">Experienced IT Solutions Company to Benefit You</h1>
+				<h2 class="font-montserrat font-bold text-white text-3xl tracking-[-1px]">Training and Knowledge that Pushes Boundaries</h2>
 			</div>
 		</div>
 	</section>
 
-	<!-- Section 8: Final Content -->
+	<!-- Final Content -->
 	<section class="relative py-20 bg-white">
 		<div class="max-w-[1080px] mx-auto px-4">
 			<div class="space-y-4 text-gray-800 text-xl font-cuprum leading-relaxed">
@@ -233,5 +229,3 @@ import Cog6Tooth from 'astro-heroicons/solid/Cog6Tooth.astro';
 
 	<Footer />
 </Layout>
-
-<VideoBackground />

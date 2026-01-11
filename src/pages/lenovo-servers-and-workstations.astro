@@ -1,27 +1,26 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
-import VideoBackground from '../components/VideoBackground.astro';
 ---
 
 <Layout title="Lenovo Servers & Workstations | Business-Ready Solutions">
-	<!-- Hero Section -->
-	<section class="relative min-h-[400px] flex items-center justify-center" class="bg-[rgb(49,100,138)]">
-		<div class="relative z-10 text-center text-white px-4">
-			<h1 class="font-montserrat font-bold uppercase text-4xl sm:text-5xl md:text-6xl lg:text-7xl" class="tracking-[-1.875px] leading-none">
+	<!-- Banner Section -->
+	<section class="relative pt-[200px] pb-20 bg-[rgba(49,100,138,0.9)]">
+		<div class="max-w-[1080px] mx-auto px-4">
+			<h1 class="font-montserrat font-bold uppercase text-white text-center text-7xl mb-0 tracking-[-1.875px] leading-none">
 				Server Experts<br/>Serving Businesses
 			</h1>
 		</div>
 	</section>
 
-	<!-- Section 1: Intro with Image -->
+	<!-- Intro with Image -->
 	<section class="relative py-20 bg-white">
 		<div class="max-w-[1080px] mx-auto px-4">
 			<div class="grid md:grid-cols-2 gap-8">
 				<div class="space-y-4 text-gray-800 text-xl font-cuprum leading-relaxed">
 					<p>Businesses of all sizes benefit from their own servers. The best computer servers in the industry – like HP, Dell, and Lenovo servers – incorporate the best design features that help businesses succeed. The top server experts build servers for companies with the ability to predict what technology they will need to exceed their goals.</p>
 					<p>Down to Earth Technology, headquartered in Waco, Texas, helps business from around the world rise to the next level with technology that plans for tomorrow. Speak with a certified technician to customize a computer and IT system that is right for your business, including your choice of the best selection of Lenovo, Dell, and HP servers.</p>
-					<h3 class="font-montserrat font-bold" class="text-[23px] text-[rgb(49,100,138)] tracking-[-1px] leading-[24.15px]">Keep your business running on solid ground with custom servers and workstations from Down to Earth Technology.</h3>
+					<h3 class="font-montserrat font-bold text-2xl text-[rgb(49,100,138)] tracking-[-1px]">Keep your business running on solid ground with custom servers and workstations from Down to Earth Technology.</h3>
 				</div>
 				<div>
 					<img src="/media/hp-servers-1.jpg" alt="IT Solutions" class="w-full h-auto rounded shadow-lg" />
@@ -30,29 +29,23 @@ import VideoBackground from '../components/VideoBackground.astro';
 		</div>
 	</section>
 
-	<!-- Section 2: Why Your Company Needs Servers (Dark Background) -->
-	<section class="relative py-20 bg-cover bg-center" class="bg-[url(/media/dell-servers.jpg)]">
+	<!-- Why Your Company Needs Servers (Dark Background with dell-workstations.jpg) -->
+	<section class="relative py-20 bg-cover bg-center bg-[url(/media/dell-workstations.jpg)]">
 		<div class="max-w-[1080px] mx-auto px-4">
 			<div class="bg-black/85 p-8 md:p-12">
-				<h2 class="font-montserrat font-bold text-white text-center mb-12 text-3xl" class="tracking-[-1px]">Why Your Company Needs Top HP, Lenovo, or Dell Servers</h2>
+				<h2 class="font-montserrat font-bold text-white text-center mb-12 text-3xl tracking-[-1px]">Why Your Company Needs Top HP, Lenovo, or Dell Servers</h2>
 
 				<div class="grid md:grid-cols-2 gap-8 mb-12">
 					<div>
-						<h3 class="font-montserrat font-bold text-white mb-4" class="text-[23px] tracking-[-1px] leading-[24.15px]">Keep Your Data Safe</h3>
+						<h3 class="font-montserrat font-bold text-white mb-4 text-2xl tracking-[-1px]">Keep Your Data Safe</h3>
 						<div class="space-y-4 text-white text-xl font-cuprum leading-relaxed">
 							<p>Your network, databases, client information, and digital data must all be stored somewhere. With "cloud storage," you're trusting your business information to be securely stored on someone else's server. Those servers can be located in other countries, and your data is sent on trips around the world, hundreds of times each day, through hundreds of access points with thousands of users.</p>
 							<p>With secure Dell, HP, or Lenovo workstations and protected HP, Lenovo, and Dell servers of your own, you control your business data. It never has to travel or be exposed to threats.</p>
 						</div>
 					</div>
 
-					<div class="flex items-center justify-center">
-						<img src="/media/it-support.jpg" alt="IT Support" class="w-full max-w-sm h-auto rounded shadow-lg" />
-					</div>
-				</div>
-
-				<div class="grid md:grid-cols-2 gap-8 mb-12">
 					<div>
-						<h3 class="font-montserrat font-bold text-white mb-4" class="text-[23px] tracking-[-1px] leading-[24.15px]">Faster Results</h3>
+						<h3 class="font-montserrat font-bold text-white mb-4 text-2xl tracking-[-1px]">Faster Results</h3>
 						<p class="text-white text-xl font-cuprum leading-relaxed mb-4">
 							Your business computers run more quickly when their information is organized and stored well, with regular maintenance and backups. That's simply fact. Everyone who uses a computer at your business, visits your website, or sends you an electronic payment is a part of your network and is affected by your server speed. When slow or inaccessible servers makes data retrieval difficult, it can slow your entire workflow.
 						</p>
@@ -60,9 +53,11 @@ import VideoBackground from '../components/VideoBackground.astro';
 							Down to Earth Technology will install and maintain your business' HP, Dell, or Lenovo servers to make sure everyone in your network is always wowed by your speed.
 						</p>
 					</div>
+				</div>
 
+				<div class="grid md:grid-cols-2 gap-8 mb-12">
 					<div>
-						<h3 class="font-montserrat font-bold text-white mb-4" class="text-[23px] tracking-[-1px] leading-[24.15px]">Room for Business Growth</h3>
+						<h3 class="font-montserrat font-bold text-white mb-4 text-2xl tracking-[-1px]">Room for Business Growth</h3>
 						<p class="text-white text-xl font-cuprum leading-relaxed mb-4">
 							Your business is growing. You need to make sure that you're building an IT system that's flexible enough to accommodate upcoming changes.
 						</p>
@@ -76,47 +71,47 @@ import VideoBackground from '../components/VideoBackground.astro';
 							As you make changes to your HP or Dell computer network, you will also need HP or Dell servers that grow with these changes. All the top Dell, HP, and Lenovo servers carried by Down to Earth Technology can be customized to plan for the specific changes you see in your company's future. Our customer IT services for upgrades and enhancements are only a call away.
 						</p>
 					</div>
-				</div>
 
-				<div>
-					<h3 class="font-montserrat font-bold text-white mb-4" class="text-[23px] tracking-[-1px] leading-[24.15px]">Customizable Lenovo Servers and Workstations</h3>
-					<div class="space-y-4 text-white text-xl font-cuprum leading-relaxed">
-						<p>Small businesses do not have the same needs or space as large corporations. Our technicians understand, and help you select the right Lenovo, HP, or Dell precision workstations that send you off and running, with room to grow.</p>
-						<p>Choose from racks, towers, blades, high-density, and specialty options for your Dell, Lenovo, or HP servers. Stackable Lenovo servers let you take advantage of all size spaces. Innovative Dell servers offer business solutions to ease IT support. Each server design has its own capacity and speed stats, available for your side-by-side comparison.</p>
-						<p>Work with an experienced IT professional at Down to Earth Technology to build the right server workstation for you.</p>
+					<div>
+						<h3 class="font-montserrat font-bold text-white mb-4 text-2xl tracking-[-1px]">Customizable Lenovo Servers and Workstations</h3>
+						<div class="space-y-4 text-white text-xl font-cuprum leading-relaxed">
+							<p>Small businesses do not have the same needs or space as large corporations. Our technicians understand, and help you select the right Lenovo, HP, or Dell precision workstations that send you off and running, with room to grow.</p>
+							<p>Choose from racks, towers, blades, high-density, and specialty options for your Dell, Lenovo, or HP servers. Stackable Lenovo servers let you take advantage of all size spaces. Innovative Dell servers offer business solutions to ease IT support. Each server design has its own capacity and speed stats, available for your side-by-side comparison.</p>
+							<p>Work with an experienced IT professional at Down to Earth Technology to build the right server workstation for you.</p>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<!-- Section 3: Customized Service and Network Support -->
+	<!-- Customized Service and Network Support -->
 	<section class="relative py-20 bg-white">
 		<div class="max-w-[1080px] mx-auto px-4">
-			<h2 class="font-montserrat font-bold mb-12 text-center" class="text-[30px] text-[rgb(226,77,61)] tracking-[-1px] leading-[24px]">Customized Service and Network Support</h2>
+			<h2 class="font-montserrat font-bold mb-12 text-center text-[30px] text-[rgb(226,77,61)] tracking-[-1px]">Customized Service and Network Support</h2>
 
 			<div class="space-y-8 text-gray-800 text-xl font-cuprum leading-relaxed">
 				<div>
-					<h3 class="font-montserrat font-bold mb-4" class="text-[23px] text-[rgb(49,100,138)] tracking-[-1px] leading-[24.15px]">Best IT Network Support in Texas</h3>
+					<h3 class="font-montserrat font-bold mb-4 text-2xl text-[rgb(49,100,138)] tracking-[-1px]">Best IT Network Support in Texas</h3>
 					<p>From our headquarters in Waco, Texas, Down to Earth Technology serves local and international businesses. We work as teams to provide on-site installation, maintenance, and upgrades of your Lenovo servers, Dell servers, and HP workstations. Operating just down the street from many of our clients, our technicians are well-known friendly faces for IT and network support in the Waco area.</p>
 				</div>
 
 				<div>
-					<h3 class="font-montserrat font-bold mb-4" class="text-[23px] text-[rgb(49,100,138)] tracking-[-1px] leading-[24.15px]">Best Remote Access Server Support Team</h3>
+					<h3 class="font-montserrat font-bold mb-4 text-2xl text-[rgb(49,100,138)] tracking-[-1px]">Best Remote Access Server Support Team</h3>
 					<p>With our remote access capabilities and expertise in working with all our servers, we don't have to be down the street to serve your business. Installation, regular maintenance, and troubleshooting for your Dell, Lenovo, or HP servers can be accomplished remotely with assistance from an IT professional in your office. Keep your servers and data at your property, knowing that experts from Down to Earth Technology are just a phone call away.</p>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<!-- Section 4: Your Technology Experts (Red Background) -->
-	<section class="relative py-20" class="bg-[rgb(226,77,61)]">
+	<!-- Your Technology Experts (Red Background) -->
+	<section class="relative py-20 bg-[rgb(226,77,61)]">
 		<div class="max-w-[1080px] mx-auto px-4">
-			<h1 class="font-montserrat font-bold uppercase text-white text-center text-4xl sm:text-5xl" class="tracking-[-1.875px] leading-none">Your Technology Experts:<br/>HP, Dell, and Lenovo Servers</h1>
+			<h1 class="font-montserrat font-bold uppercase text-white text-center text-5xl md:text-7xl tracking-[-1.875px] leading-none">Your Technology Experts:<br/>HP, Dell, and Lenovo Servers</h1>
 		</div>
 	</section>
 
-	<!-- Section 5: Final Content -->
+	<!-- Final Content -->
 	<section class="relative py-20 bg-white">
 		<div class="max-w-[1080px] mx-auto px-4">
 			<div class="space-y-4 text-gray-800 text-xl font-cuprum leading-relaxed">
