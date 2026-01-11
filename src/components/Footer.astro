@@ -1,0 +1,34 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer id="main-footer" class="bg-[#2e2e2e]">
+  <div id="footer-bottom" class="bg-[#1f1f1f] py-3">
+    <div class="max-w-[1080px] mx-auto px-4 flex items-center justify-between">
+      <!-- Copyright (floated left) -->
+      <p id="footer-info" class="float-left text-[#666666] text-sm font-cuprum leading-none m-0">
+        &copy; {currentYear} Down to Earth Technology, Waco, Texas. All Rights Reserved.
+      </p>
+
+      <!-- Social Icons (floated right) -->
+      <ul class="et-social-icons float-right list-none m-0 p-0">
+        <li class="et-social-icon et-social-facebook inline-block">
+          <a href="https://www.facebook.com/repaircomputerswaco" class="icon inline-block text-[#666666] hover:text-white transition-colors" style="font-size: 24px; line-height: 26px; width: 24px; height: 28px;" aria-label="Facebook">
+            <span class="hidden">Facebook</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="28" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+</style>

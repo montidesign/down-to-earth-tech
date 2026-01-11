@@ -1,0 +1,41 @@
+@import "tailwindcss";
+@import "@fontsource/abel/400.css";
+@import "@fontsource/roboto/400.css";
+@import "@fontsource/roboto/500.css";
+@import "@fontsource/roboto/700.css";
+@import "@fontsource/montserrat/400.css";
+@import "@fontsource/montserrat/700.css";
+@import "@fontsource/cuprum/400.css";
+@import "@fontsource/cuprum/700.css";
+
+img, video, iframe {
+  max-width: 100%;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.font-abel {
+  font-family: "Abel", sans-serif !important;
+}
+
+.font-roboto {
+  font-family: "Roboto", sans-serif !important;
+}
+
+.font-montserrat {
+  font-family: "Montserrat", sans-serif !important;
+}
+
+.font-cuprum {
+  font-family: "Cuprum", sans-serif !important;
+}

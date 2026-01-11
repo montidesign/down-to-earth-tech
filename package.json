@@ -9,6 +9,20 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.16.6"
+    "@astrojs/alpinejs": "^0.4.9",
+    "@fontsource/abel": "^5.2.7",
+    "@fontsource/cuprum": "^5.2.8",
+    "@fontsource/montserrat": "^5.2.8",
+    "@fontsource/roboto": "^5.2.9",
+    "@tailwindcss/vite": "^4.1.18",
+    "@types/alpinejs": "^3.13.11",
+    "alpinejs": "^3.15.3",
+    "astro": "^5.16.6",
+    "astro-heroicons": "^2.1.5-1",
+    "tailwindcss": "^4.1.18"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "playwright": "^1.57.0"
   }
 }

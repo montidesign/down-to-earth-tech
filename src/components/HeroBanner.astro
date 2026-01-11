@@ -1,0 +1,101 @@
+---
+interface Props {
+  heading?: string;
+  subheading?: string;
+  buttonText?: string;
+  buttonLink?: string;
+}
+
+const {
+  heading = "DOWN TO EARTH TECHNOLOGY",
+  subheading = "Managed IT Consulting, Servers & Workstations, Network Support Services, Business Surveillance Systems",
+  buttonText = "LEARN MORE",
+  buttonLink = "#services"
+} = Astro.props;
+---
+
+<section class="video-hero relative min-h-screen flex items-center justify-center">
+  <!-- Dark overlay for contrast -->
+  <div class="absolute inset-0 bg-black/50 z-0"></div>
+
+  <div class="max-w-[1080px] mx-auto px-4 relative z-10">
+    <div class="text-center">
+      <!-- Logo Icon -->
+      <div class="flex justify-center mb-6">
+        <img
+          src="/media/it-consulting.png"
+          alt="Down to Earth Technology"
+          class="h-16 w-auto"
+        />
+      </div>
+
+      <!-- Main Heading -->
+      <h1
+        class="font-montserrat uppercase text-white pb-0 font-bold mb-6"
+        style="font-size: 75px; line-height: 0.9; letter-spacing: -0.025em;"
+      >
+        DOWN TO EARTH<br />TECHNOLOGY
+      </h1>
+
+      <!-- Subheading -->
+      <div class="mb-8">
+        <p class="text-[#96A5B8] text-2xl max-w-3xl mx-auto font-cuprum" style="line-height: 1;">
+          {subheading}
+        </p>
+      </div>
+
+      <!-- CTA Button -->
+      <div class="mb-16">
+        <a
+          href={buttonLink}
+          class="inline-block bg-[#E24D3D] text-white font-bold uppercase text-2xl px-8 py-3 hover:bg-[#c93d2d] transition-colors font-cuprum"
+        >
+          {buttonText}
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Down Arrow -->
+  <div class="absolute left-1/2 -translate-x-1/2 z-10" style="bottom: 36px;">
+    <button
+      onclick="document.getElementById('first-section').scrollIntoView({ behavior: 'smooth', block: 'start' })"
+      aria-label="Scroll to content"
+      class="block hover:opacity-80 transition-opacity cursor-pointer bg-transparent border-0"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="40"
+        height="40"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="white"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </button>
+  </div>
+</section>
+
+<style>
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 38px !important;
+    }
+  }
+
+  @media (max-width: 320px) {
+    h1 {
+      font-size: 30px !important;
+    }
+  }
+
+  @media (max-width: 575px) and (orientation: portrait) {
+    .video-hero {
+      min-height: 100vh;
+    }
+  }
+</style>

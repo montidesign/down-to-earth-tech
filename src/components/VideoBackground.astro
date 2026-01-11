@@ -1,0 +1,18 @@
+---
+interface Props {
+  videoSrc?: string;
+}
+
+const {
+  videoSrc = "https://dgyftnpnlwzt.cloudfront.net/video.html"
+} = Astro.props;
+---
+
+<iframe
+  id="bg-video-frame"
+  src={videoSrc}
+  class="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none"
+  title="Background video"
+  aria-hidden="true"
+  tabindex="-1"
+></iframe>
