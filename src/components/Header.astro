@@ -22,17 +22,10 @@ const navItems = [
 ---
 
 <header
-  class="bg-[#E24D3D] fixed top-0 left-0 right-0 z-50 transition-transform duration-300 -translate-y-full"
+  class="bg-[#E24D3D] fixed top-0 left-0 right-0 z-[99999]"
   x-data="{
-    mobileMenuOpen: false,
-    scrolled: false,
-    init() {
-      window.addEventListener('scroll', () => {
-        this.scrolled = window.scrollY > 860;
-      });
-    }
+    mobileMenuOpen: false
   }"
-  :class="scrolled ? 'translate-y-0' : ''"
 >
   <!-- Phone Number -->
   <div class="relative">
