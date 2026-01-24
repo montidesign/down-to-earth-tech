@@ -4,6 +4,8 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
+    "cms": "npx decap-server",
+    "dev:cms": "start /b npx decap-server && astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
@@ -14,6 +16,7 @@
     "@fontsource/cuprum": "^5.2.8",
     "@fontsource/montserrat": "^5.2.8",
     "@fontsource/roboto": "^5.2.9",
+    "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.1.18",
     "@types/alpinejs": "^3.13.11",
     "alpinejs": "^3.15.3",
@@ -23,6 +26,7 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.57.0",
+    "decap-server": "^3.5.0",
     "playwright": "^1.57.0"
   }
 }

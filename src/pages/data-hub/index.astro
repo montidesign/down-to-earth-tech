@@ -1,0 +1,128 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Footer from '../../components/Footer.astro';
+import VideoBackground from '../../components/VideoBackground.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import { getCollection } from 'astro:content';
+
+// Get all published posts
+const allPosts = await getCollection('posts', ({ data }) => !data.draft);
+
+// Sort by date (newest first)
+const sortedPosts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+// Pagination settings
+const postsPerPage = 9;
+const totalPages = Math.ceil(sortedPosts.length / postsPerPage);
+const currentPage = 1;
+const paginatedPosts = sortedPosts.slice(0, postsPerPage);
+---
+
+<VideoBackground />
+
+<Layout title="Data Hub - Down To Earth Technology">
+	<!-- Lead Capture Form -->
+	<section class="relative mt-[173px] py-12 bg-gray-100">
+		<div class="max-w-[1080px] mx-auto px-4">
+			<div class="bg-[rgb(226,77,61)] rounded-lg shadow-lg p-8">
+				<div class="flex flex-col md:flex-row items-center gap-6 mb-6">
+					<div class="flex-shrink-0">
+						<img
+							src="/media/it-service-management.jpg"
+							alt="IT Service Management"
+							class="w-32 h-auto object-cover rounded"
+						/>
+					</div>
+					<div class="flex-1 text-white">
+						<h2 class="font-montserrat font-bold text-2xl mb-2">Need Help? Get in Touch!</h2>
+						<p class="font-cuprum text-lg">
+							If you've got any question, our expert IT team is available to help. Fill in your name, email address, and phone number and we will respond quickly.
+						</p>
+					</div>
+				</div>
+				<form action="/contact.php" method="POST">
+					<div class="flex flex-col md:flex-row gap-4 mb-4">
+						<input
+							type="text"
+							name="name"
+							placeholder="Name"
+							required
+							class="flex-1 px-4 py-3 bg-white text-gray-800 font-cuprum placeholder:text-[rgb(226,77,61)] tracking-wider"
+						/>
+						<input
+							type="email"
+							name="email"
+							placeholder="Email"
+							required
+							class="flex-1 px-4 py-3 bg-white text-gray-800 font-cuprum placeholder:text-[rgb(226,77,61)] tracking-wider"
+						/>
+						<input
+							type="tel"
+							name="phone"
+							placeholder="Phone"
+							class="flex-1 px-4 py-3 bg-white text-gray-800 font-cuprum placeholder:text-[rgb(226,77,61)] tracking-wider"
+						/>
+					</div>
+					<button
+						type="submit"
+						class="w-full bg-[rgb(226,77,61)] hover:bg-[rgb(200,60,45)] border-2 border-white text-white font-montserrat font-bold uppercase py-3 transition-colors tracking-wider"
+					>
+						Get Advice Now
+					</button>
+				</form>
+			</div>
+		</div>
+	</section>
+
+	<!-- Blog Posts Grid -->
+	<section class="relative py-12 bg-white/95">
+		<div class="max-w-[1080px] mx-auto px-4">
+			{sortedPosts.length === 0 ? (
+				<p class="text-center text-gray-600 text-xl font-cuprum py-12">
+					No posts available yet. Check back soon!
+				</p>
+			) : (
+				<>
+					<div class="grid md:grid-cols-3 gap-6 mb-12">
+						{paginatedPosts.map(post => (
+							<BlogCard
+								title={post.data.title}
+								slug={post.slug}
+								excerpt={post.data.excerpt || post.data.description}
+								featuredImage={post.data.featuredImage}
+								featuredImageAlt={post.data.featuredImageAlt}
+							/>
+						))}
+					</div>
+
+					{/* Pagination */}
+					{totalPages > 1 && (
+						<nav class="flex justify-center items-center gap-4">
+							{currentPage > 1 && (
+								<a
+									href={currentPage === 2 ? '/data-hub/' : `/data-hub/${currentPage - 1}/`}
+									class="text-[rgb(49,100,138)] hover:text-[rgb(226,77,61)] font-cuprum text-lg transition-colors"
+								>
+									« Newer Entries
+								</a>
+							)}
+							<span class="text-gray-500 font-cuprum">
+								Page {currentPage} of {totalPages}
+							</span>
+							{currentPage < totalPages && (
+								<a
+									href={`/data-hub/${currentPage + 1}/`}
+									class="text-[rgb(49,100,138)] hover:text-[rgb(226,77,61)] font-cuprum text-lg transition-colors"
+								>
+									Older Entries »
+								</a>
+							)}
+						</nav>
+					)}
+				</>
+			)}
+		</div>
+	</section>
+
+	<Footer />
+</Layout>

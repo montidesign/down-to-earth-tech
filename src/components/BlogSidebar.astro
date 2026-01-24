@@ -1,0 +1,73 @@
+---
+import { getCollection } from 'astro:content';
+
+// Get all published posts for recent posts and categories
+const allPosts = await getCollection('posts', ({ data }) => !data.draft);
+
+// Sort by date for recent posts (newest first)
+const recentPosts = allPosts
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+	.slice(0, 5);
+
+// Get unique categories
+const categories = [...new Set(allPosts.map(post => JSON.stringify({
+	name: post.data.category,
+	slug: post.data.categorySlug
+})))]
+	.map(str => JSON.parse(str))
+	.sort((a, b) => a.name.localeCompare(b.name));
+---
+
+<aside class="space-y-8">
+	<!-- Recent Posts -->
+	<div>
+		<h4 class="font-montserrat font-bold text-lg text-[rgb(49,100,138)] mb-4 pb-2 border-b border-gray-200">Recent Posts</h4>
+		<ul class="space-y-3">
+			{recentPosts.map(post => (
+				<li>
+					<a
+						href={`/${post.slug}/`}
+						class="text-[rgb(49,100,138)] hover:text-[rgb(226,77,61)] text-base font-cuprum leading-snug block transition-colors"
+					>
+						{post.data.title}
+					</a>
+				</li>
+			))}
+		</ul>
+	</div>
+
+	<!-- Topics (Categories) -->
+	<div>
+		<h4 class="font-montserrat font-bold text-lg text-[rgb(49,100,138)] mb-4 pb-2 border-b border-gray-200">Topics</h4>
+		<ul class="space-y-2">
+			{categories.map(cat => (
+				<li>
+					<a
+						href={`/category/${cat.slug}/`}
+						class="text-[rgb(49,100,138)] hover:text-[rgb(226,77,61)] text-base font-cuprum transition-colors"
+					>
+						{cat.name}
+					</a>
+				</li>
+			))}
+		</ul>
+	</div>
+
+	<!-- Search -->
+	<div>
+		<form action="/data-hub/" method="get" class="flex">
+			<input
+				type="text"
+				name="search"
+				placeholder="Search..."
+				class="flex-1 px-3 py-2 border border-gray-300 rounded-l text-base font-cuprum focus:outline-none focus:border-[rgb(49,100,138)]"
+			/>
+			<button
+				type="submit"
+				class="px-4 py-2 bg-[rgb(49,100,138)] text-white rounded-r hover:bg-[rgb(38,78,108)] transition-colors"
+			>
+				Search
+			</button>
+		</form>
+	</div>
+</aside>

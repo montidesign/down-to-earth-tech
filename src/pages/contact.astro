@@ -16,50 +16,56 @@ import VideoBackground from '../components/VideoBackground.astro';
 		</div>
 	</section>
 
-	<!-- Contact Form -->
-	<section class="relative py-20 bg-white">
+	<!-- Contact Form Section -->
+	<section class="relative py-20 bg-white/95">
 		<div class="max-w-[1080px] mx-auto px-4">
-			<div class="grid md:grid-cols-2 gap-12">
-				<div class="space-y-6">
-					<div class="space-y-4 text-gray-800 text-xl font-cuprum leading-relaxed">
-						<p>Thank you for your interest in Down to Earth Technology' IT consulting, computer network support, business surveillance systems, and other IT services. Please use the form below to submit your information if you have questions about our managed IT support, or if you would like to know more about any of our top-of-the-line servers or selection of premiere business monitoring equipment.</p>
-						<blockquote class="border-l-4 border-[#e24d3d] pl-4 my-4 text-[#e24d3d] text-xl font-cuprum leading-relaxed">
-							Our clients are very important to us. Down to Earth Technology holds your privacy in the highest regard. We never distribute, sell, or make your personal information available to anyone.
-						</blockquote>
-					</div>
-
-					<div class="space-y-4">
-						<h2 class="font-montserrat font-bold text-3xl text-[rgb(226,77,61)] tracking-[-1px]">Contact Us</h2>
-						<p class="text-gray-800 text-xl font-cuprum leading-relaxed">
-							Call <a href="tel:2545234304" class="text-[#e24d3d] hover:underline">(254) 523-4304</a> or submit the form below.
-						</p>
-					</div>
+			<!-- Two Column Layout -->
+			<div class="grid md:grid-cols-2 gap-12 mb-12">
+				<div class="space-y-4 text-gray-800 text-xl font-cuprum leading-relaxed">
+					<p>Thank you for your interest in Down to Earth Technology' IT consulting, computer network support, business surveillance systems, and other IT services. Please use the form below to submit your information if you have questions about our managed IT support, or if you would like to know more about any of our top-of-the-line servers or selection of premiere business monitoring equipment.</p>
+					<blockquote class="border-l-4 border-[rgb(226,77,61)] bg-gray-100 pl-4 py-2 my-4 text-[rgb(226,77,61)] text-xl font-cuprum leading-relaxed">
+						Our clients are very important to us. Down to Earth Technology holds your privacy in the highest regard. We never distribute, sell, or make your personal information available to anyone.
+					</blockquote>
 				</div>
 
-				<div class="space-y-6">
-					<h2 class="font-montserrat font-bold text-3xl text-[rgb(226,77,61)] tracking-[-1px]">Our IT Team Has Answers</h2>
-					<div class="space-y-4 text-gray-800 text-xl font-cuprum leading-relaxed">
-						<p>Down to Earth Technology has a team of IT experts ready to help you. We are here to answer your questions. Our team is available in the office Monday through Friday from 9am to 4pm. We pledge to respond to IT service requests with action and plan of follow up action within 1 business day. We are available to remotely access your system and provide the IT support necessary quickly and conveniently, so your business operations are never inturrupted.</p>
-						<p>You can also reach out to us anytime at any of our social media sites.</p>
-						<p>Thank you for choosing Down to Earth Technology. Looking forward to speaking with you soon!</p>
-					</div>
+				<div class="space-y-4">
+					<h2 class="font-montserrat font-bold text-3xl text-[rgb(226,77,61)] tracking-[-1px]">Contact Us</h2>
+					<p class="text-gray-800 text-xl font-cuprum leading-relaxed">
+						Call <a href="tel:2545234304" class="text-[rgb(226,77,61)] hover:underline">(254) 523-4304</a> or submit the form below.
+					</p>
+
+					<!-- Contact Form -->
+					<form action="/contact.php" method="POST" class="space-y-4 mt-6">
+						<div>
+							<label for="name" class="block text-gray-800 text-lg font-cuprum mb-1">Name <span class="text-[rgb(226,77,61)]">*</span></label>
+							<input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-[rgb(49,100,138)] font-cuprum text-lg" />
+						</div>
+						<div>
+							<label for="email" class="block text-gray-800 text-lg font-cuprum mb-1">Email <span class="text-[rgb(226,77,61)]">*</span></label>
+							<input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-[rgb(49,100,138)] font-cuprum text-lg" />
+						</div>
+						<div>
+							<label for="message" class="block text-gray-800 text-lg font-cuprum mb-1">Message</label>
+							<textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-[rgb(49,100,138)] font-cuprum text-lg resize-vertical"></textarea>
+						</div>
+						<div>
+							<button type="submit" class="bg-[rgb(226,77,61)] hover:bg-[rgb(200,60,45)] text-white font-montserrat font-bold uppercase px-8 py-3 rounded transition-colors">
+								Submit
+							</button>
+						</div>
+					</form>
 				</div>
 			</div>
-		</div>
-	</section>
 
-	<!-- Map -->
-	<section class="relative">
-		<div class="w-full h-96">
-			<iframe
-				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3389.2!2d-97.1467!3d31.5493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDMyJzU3LjUiTiA5N8KwMDgnNDguMSJX!5e0!3m2!1sen!2sus!4v1234567890"
-				width="100%"
-				height="100%"
-				class="border-0"
-				allowfullscreen=""
-				loading="lazy"
-				referrerpolicy="no-referrer-when-downgrade"
-				title="Down to Earth Technology Location"></iframe>
+			<!-- Full Width "Our IT Team Has Answers" Section -->
+			<div class="space-y-4">
+				<h2 class="font-montserrat font-bold text-3xl text-[rgb(226,77,61)] tracking-[-1px]">Our IT Team Has Answers</h2>
+				<div class="space-y-4 text-gray-800 text-xl font-cuprum leading-relaxed">
+					<p>Down to Earth Technology has a team of IT experts ready to help you. We are here to answer your questions. Our team is available in the office Monday through Friday from 9am to 4pm. We pledge to respond to IT service requests with action and plan of follow up action within 1 business day. We are available to remotely access your system and provide the IT support necessary quickly and conveniently, so your business operations are never inturrupted.</p>
+					<p>You can also reach out to us anytime at any of our social media sites.</p>
+					<p>Thank you for choosing Down to Earth Technology. Looking forward to speaking with you soon!</p>
+				</div>
+			</div>
 		</div>
 	</section>
 

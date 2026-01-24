@@ -1,0 +1,31 @@
+---
+interface Props {
+	author: string;
+	pubDate: Date;
+	category: string;
+	categorySlug: string;
+}
+
+const { author, pubDate, category, categorySlug } = Astro.props;
+
+// Format date as "Jan 19, 2026"
+const formattedDate = pubDate.toLocaleDateString('en-US', {
+	month: 'short',
+	day: 'numeric',
+	year: 'numeric'
+});
+---
+
+<p class="text-[#666] text-base font-cuprum mb-4">
+	by <span class="text-[#2ea3f2]">{author}</span>
+	<span class="mx-1">|</span>
+	{formattedDate}
+	<span class="mx-1">|</span>
+	<a
+		href={`/category/${categorySlug}/`}
+		class="text-[#2ea3f2] hover:underline"
+	>
+		{category}
+	</a>
+	<span class="mx-1">|</span>
+</p>

@@ -2,51 +2,83 @@
 interface Props {
   phoneNumber?: string;
   phoneDisplay?: string;
+  phoneNumberAlt?: string;
+  phoneDisplayAlt?: string;
+  isHomepage?: boolean;
 }
 
 const {
-  phoneNumber = "254-294-9499",
-  phoneDisplay = "(254) 294-9499"
+  phoneNumber = "254-523-4304",
+  phoneDisplay = "(254) 523-4304",
+  phoneNumberAlt = "254-294-9499",
+  phoneDisplayAlt = "(254) 294-9499",
+  isHomepage = false
 } = Astro.props;
 
 const navItems = [
-  { label: "Managed IT Services", labelDesktop: "MANAGED IT SERVICES", href: "/managed-it-consulting-services-and-support" },
-  { label: "Servers and Workstations", labelDesktop: "SERVERS AND WORKSTATIONS", href: "/lenovo-servers-and-workstations" },
-  { label: "Network Support", labelDesktop: "NETWORK SUPPORT", href: "/computer-network-support" },
-  { label: "Business Surveillance", labelDesktop: "BUSINESS SURVEILLANCE", href: "/business-surveillance-systems" },
-  { label: "Data Hub", labelDesktop: "DATA HUB", href: "/data-hub" },
-  { label: "About Us", labelDesktop: "ABOUT US", href: "/about-us" },
-  { label: "Contact", labelDesktop: "CONTACT", href: "/contact" },
-  { label: "Support", labelDesktop: "SUPPORT", href: "https://my.splashtop.com/team_deployment/download/R5JA5YTK2XYJ" }
+  { label: "Managed IT Services", href: "/managed-it-consulting-services-and-support" },
+  { label: "Servers and Workstations", href: "/lenovo-servers-and-workstations" },
+  { label: "Network Support", href: "/computer-network-support" },
+  { label: "Business Surveillance", href: "/business-surveillance-systems" },
+  { label: "Data Hub", href: "/data-hub" },
+  { label: "About Us", href: "/about-us" },
+  { label: "Contact", href: "/contact" },
+  { label: "Support", href: "https://my.splashtop.com/team_deployment/download/R5JA5YTK2XYJ" }
 ];
 ---
 
 <header
-  class="bg-[#E24D3D] fixed top-0 left-0 right-0 z-[99999]"
-  x-data="{
-    mobileMenuOpen: false
-  }"
+  class:list={[
+    "fixed top-0 left-0 right-0 z-[99999] transition-all duration-300",
+    isHomepage ? "" : "bg-[#E24D3D]"
+  ]}
+  x-data={`{
+    mobileMenuOpen: false,
+    scrolled: false,
+    isHomepage: ${isHomepage},
+    phoneNumber: '${phoneNumber}',
+    phoneDisplay: '${phoneDisplay}',
+    phoneNumberAlt: '${phoneNumberAlt}',
+    phoneDisplayAlt: '${phoneDisplayAlt}',
+    init() {
+      this.checkScroll();
+      window.addEventListener('scroll', () => this.checkScroll());
+    },
+    checkScroll() {
+      this.scrolled = window.scrollY > 50;
+    },
+    get currentPhone() {
+      return this.isHomepage && this.scrolled ? this.phoneNumberAlt : this.phoneNumber;
+    },
+    get currentPhoneDisplay() {
+      return this.isHomepage && this.scrolled ? this.phoneDisplayAlt : this.phoneDisplay;
+    },
+    get showHeader() {
+      return !this.isHomepage || this.scrolled;
+    }
+  }`}
+  :class="{ 'bg-[#E24D3D]': showHeader, 'bg-transparent': !showHeader }"
 >
   <!-- Phone Number -->
-  <div class="relative">
+  <div class="relative" x-show="showHeader" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100">
     <div class="container mx-auto px-4">
       <div class="flex items-center justify-center py-3">
         <a
-          href={`tel:${phoneNumber}`}
+          :href="`tel:${currentPhone}`"
           class="flex items-center gap-2 text-white hover:text-white/80 transition-colors leading-none"
-          aria-label={`Call us at ${phoneDisplay}`}
+          :aria-label="`Call us at ${currentPhoneDisplay}`"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="flex-shrink-0">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
           </svg>
-          <span class="font-bold text-xl font-roboto leading-none">{phoneDisplay}</span>
+          <span class="font-bold text-xl font-roboto leading-none" x-text="currentPhoneDisplay"></span>
         </a>
       </div>
     </div>
   </div>
 
   <!-- Mobile Select Page Button -->
-  <div class="lg:hidden pt-12 pb-3">
+  <div class="lg:hidden pt-12 pb-3" x-show="showHeader" x-transition>
     <div class="container mx-auto px-4">
       <button
         @click="mobileMenuOpen = !mobileMenuOpen"
@@ -66,7 +98,7 @@ const navItems = [
   </div>
 
   <!-- Logo (desktop only) -->
-  <div class="hidden lg:block">
+  <div class="hidden lg:block" x-show="showHeader" x-transition>
     <div class="container mx-auto px-4">
       <div class="flex items-center justify-center py-4">
         <a href="/" aria-label="Down to Earth Technology Home">
@@ -81,17 +113,17 @@ const navItems = [
   </div>
 
   <!-- Desktop Navigation -->
-  <nav class="hidden lg:block" aria-label="Primary navigation">
+  <nav class="hidden lg:block" aria-label="Primary navigation" x-show="showHeader" x-transition>
     <div class="container mx-auto px-4">
       <ul class="flex items-center justify-center gap-1 py-3">
         {navItems.map((item) => (
           <li>
             <a
               href={item.href}
-              class="px-3 py-2 text-white font-bold tracking-wider hover:bg-white/10 transition-colors rounded font-abel"
+              class="px-3 py-2 text-white font-bold tracking-wider hover:bg-white/10 transition-colors rounded font-abel uppercase"
               style="font-size: .9375rem;"
             >
-              {item.labelDesktop}
+              {item.label}
             </a>
           </li>
         ))}

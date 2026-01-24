@@ -12,7 +12,6 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-
 # environment variables
 .env
 .env.production
@@ -22,3 +21,15 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Playwright screenshots (development only)
+.playwright-mcp/
+
+# Claude Code local settings
+.claude/settings.local.json
+
+# Context management (development only)
+.context/
+
+# Temporary files
+nul

@@ -8,18 +8,18 @@ import Lifebuoy from 'astro-heroicons/solid/Lifebuoy.astro';
 import ArrowPath from 'astro-heroicons/solid/ArrowPath.astro';
 ---
 
-<Layout title="Down to Earth Technology - IT Services & Support">
+<Layout title="Down to Earth Technology - IT Services & Support" isHomepage={true}>
 	<HeroBanner />
 
 	<!-- Section 1: Business IT Managed Services -->
-	<section id="first-section" class="relative py-20" class="bg-white/95">
+	<section id="first-section" class="relative py-20 bg-white/90">
 		<div class="max-w-[1080px] mx-auto px-4">
 			<div>
-				<h2 class="font-montserrat font-bold text-[#E24D3D] mb-6" class="text-[30px] tracking-[-1px] leading-[24px]">Business IT Managed Services: Hardware, Software, and Tech Support</h2>
-				<p class="text-gray-800 text-xl font-cuprum leading-relaxed mb-4">
+				<h2 class="font-montserrat font-bold text-[#E24D3D] mb-6 text-[30px] tracking-[-1px] leading-tight">Business IT Managed Services: Hardware, Software, and Tech Support</h2>
+				<p class="text-gray-700 text-lg font-cuprum leading-relaxed mb-4">
 					Not all businesses have their own IT department, but most need IT expertise. Some businesses simply need additional IT support for their technical team. From our offices in Waco, Texas, Down to Earth Technology offers the IT consulting and business solutions for your servers, computer workstations, business surveillance equipment and more. We are a top experienced IT consulting business, offering customized solutions to every client. Training and expertise lets us offer our clients more, and we work hard to make your business technology work hard for you.
 				</p>
-				<p class="text-gray-800 text-xl font-cuprum leading-relaxed">
+				<p class="text-gray-700 text-lg font-cuprum leading-relaxed">
 					Your business runs on your technology. Count on Down to Earth Technology to keep your technology running.
 				</p>
 			</div>
@@ -27,21 +27,21 @@ import ArrowPath from 'astro-heroicons/solid/ArrowPath.astro';
 	</section>
 
 	<!-- Section 2: Hardware and Devices (Transparent BG with white content box) -->
-	<section class="relative pt-20 pb-20 bg-cover bg-center" class="bg-[url(/media/it-consulting.jpg)]">
+	<section class="relative py-20 bg-cover bg-center bg-[url('/media/it-consulting.jpg')]">
 		<div class="max-w-[1080px] mx-auto px-4">
 			<div class="grid md:grid-cols-2 gap-8">
 				<div></div>
-				<div class="bg-white/95 p-8 rounded shadow-lg">
-					<h3 class="font-montserrat font-bold mb-4" class="text-[23px] text-[rgb(49,100,138)] tracking-[-1px] leading-[24.15px]">Hardware and Devices</h3>
-					<p class="text-gray-800 text-xl font-cuprum leading-relaxed mb-4">
+				<div class="bg-white/95 p-8">
+					<h3 class="font-montserrat font-bold mb-4 text-[23px] text-[#31648a] tracking-[-1px] leading-tight">Hardware and Devices</h3>
+					<p class="text-gray-700 text-lg font-cuprum leading-relaxed mb-4">
 						Down to Earth Technology offers a range of top-of-the-line products including:
 					</p>
-					<ul class="list-disc ml-6 text-gray-800 text-xl font-cuprum leading-relaxed space-y-2">
-						<li>Lenovo servers: Towers, racks, and blades, these customizable servers include a three-year warranty</li>
-						<li>Dell servers: Build your own tower of performance Dell workspace equipment</li>
-						<li>HP servers: As certified technicians, we can integrate your entire workspace system</li>
-						<li>HP and Dell computer systems: High-end graphic design needs or ultra-sensitive processing – put together the business computer right for you</li>
-						<li>Point of Sale systems: Streamline your business operations with the right registers and inventory devices</li>
+					<ul class="list-disc ml-6 text-gray-700 text-lg font-cuprum leading-relaxed space-y-2">
+						<li><strong>Lenovo servers:</strong> Towers, racks, and <a href="https://en.wikipedia.org/wiki/Blade_server" class="text-[#E24D3D] hover:underline">blades</a>, these customizable servers include a three-year warranty</li>
+						<li><strong>Dell servers:</strong> Build your own tower of performance Dell workspace equipment</li>
+						<li><strong>HP servers:</strong> As certified technicians, we can integrate your entire workspace system</li>
+						<li><strong>HP and Dell computer systems:</strong> High-end graphic design needs or ultra-sensitive processing – put together the business computer right for you</li>
+						<li><strong>Point of Sale systems:</strong> Streamline your business operations with the right registers and inventory devices</li>
 					</ul>
 				</div>
 			</div>
@@ -49,64 +49,68 @@ import ArrowPath from 'astro-heroicons/solid/ArrowPath.astro';
 	</section>
 
 	<!-- Section 3: Services Grid (Blue BG with images) -->
-	<section class="relative py-20" class="bg-[rgb(49,100,138)]">
+	<section class="relative py-20 bg-[#31648a]">
 		<div class="max-w-[1080px] mx-auto px-4">
 			<div class="grid md:grid-cols-2 gap-8">
 				<!-- Left Column -->
 				<div class="space-y-8">
 					<!-- Business Surveillance -->
 					<div>
-						<h3 class="font-montserrat font-bold text-white mb-4" class="text-[23px] tracking-[-1px] leading-[24.15px]">
-							<a href="/business-surveillance" class="hover:underline">Business Surveillance Systems</a>
+						<h3 class="font-montserrat font-bold text-white mb-4 text-[23px] tracking-[-1px] leading-tight">
+							<a href="/business-surveillance-systems" class="hover:underline">Business Surveillance Systems</a>
 						</h3>
-						<p class="text-white text-xl font-cuprum leading-relaxed mb-4">
+						<p class="text-white text-lg font-cuprum leading-relaxed mb-4">
 							Down to Earth Technology offers the best selection of business monitoring devices, including:
 						</p>
-						<ul class="list-disc ml-6 text-white text-xl font-cuprum leading-relaxed space-y-2">
-							<li>IP camera systems: Customize a wired or wireless camera system to monitor your property</li>
-							<li>Camera monitors: Monitor your property cameras from business desktops, or from your mobile device or tablet</li>
-							<li>Backup servers: Protect your recorded surveillance data with automatic backup to your own server</li>
+						<ul class="list-disc ml-6 text-white text-lg font-cuprum leading-relaxed space-y-2">
+							<li><strong>IP camera systems:</strong> Customize a wired or wireless camera system to monitor your property</li>
+							<li><strong>Camera monitors:</strong> Monitor your property cameras from business desktops, or from your mobile device or tablet</li>
+							<li><strong>Backup servers:</strong> Protect your recorded surveillance data with automatic backup to your own server</li>
 						</ul>
 					</div>
 
 					<!-- Image: Computer grill and power button -->
-					<img src="/media/lenovo-servers.jpg" alt="Lenovo Servers" class="w-full h-auto rounded shadow-lg" />
+					<img src="/media/lenovo-servers.jpg" alt="Lenovo Servers" class="w-full h-auto" />
 
 					<!-- Network Support -->
 					<div>
-						<h3 class="font-montserrat font-bold text-white mb-4" class="text-[23px] tracking-[-1px] leading-[24.15px]">Network Support Services</h3>
-						<p class="text-white text-xl font-cuprum leading-relaxed mb-4">
+						<h3 class="font-montserrat font-bold text-white mb-4 text-[23px] tracking-[-1px] leading-tight">
+							<a href="/computer-network-support" class="hover:underline">Network Support Services</a>
+						</h3>
+						<p class="text-white text-lg font-cuprum leading-relaxed mb-4">
 							Down to Earth Technology offers IT network support for wired and wireless networks at businesses in all industries, including:
 						</p>
-						<ul class="list-disc ml-6 text-white text-xl font-cuprum leading-relaxed space-y-2">
-							<li>Network protection: Secure and protect your network with encryption and protective software</li>
-							<li>Network security: Optimize your network's performance with firewalls and blocks that keep harmful invaders out</li>
-							<li>Multiple networks: Offer wireless guest networks and multiple secured networks for different employees or locations. Keep the data flow separate.</li>
-							<li>Computer network support: Network your computer workstations, automate your IT services like network data backup, and maximize business efficiency</li>
-							<li>Troubleshooting: Call for assistance with network connection, server failures, and computer network error messages</li>
+						<ul class="list-disc ml-6 text-white text-lg font-cuprum leading-relaxed space-y-2">
+							<li><strong>Network protection:</strong> Secure and protect your network with encryption and protective software</li>
+							<li><strong>Network security:</strong> Optimize your network's performance with firewalls and blocks that keep harmful invaders out</li>
+							<li><strong>Multiple networks:</strong> Offer wireless guest networks and multiple secured networks for different employees or locations. Keep the data flow separate.</li>
+							<li><strong>Computer network support:</strong> Network your computer workstations, automate your IT services like network data backup, and maximize business efficiency</li>
+							<li><strong>Troubleshooting:</strong> Call for assistance with network connection, server failures, and computer network error messages</li>
 						</ul>
 					</div>
 
 					<!-- Image: Woman standing next to server rack -->
-					<img src="/media/computer-network-support.jpg" alt="Computer Network Support" class="w-full h-auto rounded shadow-lg" />
+					<img src="/media/computer-network-support.jpg" alt="Computer Network Support" class="w-full h-auto" />
 				</div>
 
 				<!-- Right Column -->
 				<div>
-					<img src="/media/business-surveillance-systems.jpg" alt="Business Surveillance Systems" class="w-full h-auto rounded shadow-lg mb-4" />
-					<h3 class="font-montserrat font-bold text-white mb-4" class="text-[23px] tracking-[-1px] leading-[24.15px]">IT Consulting Services</h3>
-					<p class="text-white text-xl font-cuprum leading-relaxed mb-4">
+					<img src="/media/business-surveillance-systems.jpg" alt="Business Surveillance Systems" class="w-full h-auto mb-4" />
+					<h3 class="font-montserrat font-bold text-white mb-4 text-[23px] tracking-[-1px] leading-tight">
+						<a href="/managed-it-consulting-services-and-support" class="hover:underline">IT Consulting Services</a>
+					</h3>
+					<p class="text-white text-lg font-cuprum leading-relaxed mb-4">
 						Down to Earth Technology designs individualized computer workstations and networks, consulting to give you top IT services, including:
 					</p>
-					<ul class="list-disc ml-6 text-white text-xl font-cuprum leading-relaxed space-y-2 mb-4">
-						<li>Custom components: Build a computer that's right for high-end graphics, the medical or dental industries, or any specifications of your business</li>
-						<li>Malware and virus protection: Start with a clean computer and protect it from damaging or harmful invaders</li>
-						<li>Wireless networks: Set up the links between your business devices, then protect information sent through your network</li>
-						<li>Data backup and storage: Set proactive automated processes to run without any effort</li>
-						<li>New Software and apps: Install and learn to use new software, including Google apps</li>
-						<li>IT support and troubleshooting: Get a reboot of your system, troubleshoot network connection problems, and more</li>
+					<ul class="list-disc ml-6 text-white text-lg font-cuprum leading-relaxed space-y-2 mb-4">
+						<li><strong>Custom components:</strong> Build a computer that's right for high-end graphics, the medical or dental industries, or any specifications of your business</li>
+						<li><strong>Malware and virus protection:</strong> Start with a clean computer and protect it from damaging or harmful invaders</li>
+						<li><strong>Wireless networks:</strong> Set up the links between your business devices, then protect information sent through your network</li>
+						<li><strong>Data backup and storage:</strong> Set proactive automated processes to run without any effort</li>
+						<li><strong>New Software and apps:</strong> Install and learn to use new software, including Google apps</li>
+						<li><strong>IT support and troubleshooting:</strong> Get a reboot of your system, troubleshoot network connection problems, and more</li>
 					</ul>
-					<p class="text-white text-xl font-cuprum leading-relaxed">
+					<p class="text-white text-lg font-cuprum leading-relaxed">
 						Down to Earth Technology works hard to make sure that your employees have all the technology they need to do their jobs. Your clients should never experience "technical difficulties" that lead to delays. Delays cost money, and our IT services keep your business working faster and more efficiently.
 					</p>
 				</div>
@@ -115,14 +119,16 @@ import ArrowPath from 'astro-heroicons/solid/ArrowPath.astro';
 	</section>
 
 	<!-- Section 4: Down to Earth Technology CTA -->
-	<section class="relative py-20" class="bg-white/95">
+	<section class="relative py-24 bg-white/90">
 		<div class="max-w-[1080px] mx-auto px-4">
 			<div class="text-center">
-				<h1 class="font-montserrat font-bold uppercase mb-6 text-4xl sm:text-5xl md:text-6xl lg:text-[75px]" class="text-[rgb(226,77,61)] tracking-[-1.875px] leading-none">Down to Earth Technology</h1>
-				<p class="text-gray-800 text-xl font-cuprum leading-relaxed mb-8">
+				<h1 class="font-montserrat font-bold uppercase mb-4 text-4xl sm:text-5xl md:text-6xl lg:text-[60px] text-[#E24D3D] tracking-[-1.5px] leading-none">
+					Down to Earth<br/>Technology
+				</h1>
+				<p class="text-gray-700 text-lg font-cuprum leading-relaxed mb-8">
 					We are the IT support that keeps your business running on solid ground.
 				</p>
-				<a href="/contact" class="inline-block bg-[#E24D3D] text-white font-bold uppercase text-xl px-10 py-4 hover:bg-[#c93d2d] transition-colors font-cuprum">
+				<a href="/contact" class="inline-block bg-[#E24D3D] text-white font-bold uppercase text-lg px-8 py-3 hover:bg-[#c93d2d] transition-colors font-cuprum tracking-wider">
 					CONTACT US TODAY
 				</a>
 			</div>
@@ -130,16 +136,15 @@ import ArrowPath from 'astro-heroicons/solid/ArrowPath.astro';
 	</section>
 
 	<!-- Section 5: Hardware and Devices Detailed (Dark BG with alternating columns) -->
-	<section class="relative py-20 bg-cover bg-center" class="bg-[url(/media/dell-servers.jpg)]">
-		<div class="max-w-[1080px] mx-auto px-4">
-			<div class="bg-black/75 p-8">
-			<h2 class="font-montserrat font-bold text-white mb-12" class="text-[30px] tracking-[-1px] leading-[24px]">Hardware and Devices</h2>
+	<section class="relative py-20 bg-cover bg-center bg-[url('/media/dell-servers.jpg')]">
+		<div class="max-w-[1080px] mx-auto px-4 bg-black/80 p-8">
+			<h2 class="font-montserrat font-bold text-white mb-12 text-[30px] tracking-[-1px] leading-tight">Hardware and Devices</h2>
 
 			<!-- Row 1: Text 2/3, Image 1/3 -->
 			<div class="grid md:grid-cols-3 gap-8 mb-12">
 				<div class="md:col-span-2">
-					<h3 class="font-montserrat font-bold text-white mb-4" class="text-[23px] tracking-[-1px] leading-[24.15px]">Authorized Retailer: Lenovo servers, Dell servers, HP servers</h3>
-					<div class="space-y-4 text-white text-xl font-cuprum leading-relaxed">
+					<h3 class="font-montserrat font-bold text-white mb-4 text-[23px] tracking-[-1px] leading-tight">Authorized Retailer: <a href="/lenovo-servers-and-workstations" class="text-[#E24D3D] hover:underline">Lenovo servers</a>, <a href="/lenovo-servers-and-workstations" class="text-[#E24D3D] hover:underline">Dell servers</a>, <a href="/lenovo-servers-and-workstations" class="text-[#E24D3D] hover:underline">HP servers</a></h3>
+					<div class="space-y-4 text-white text-lg font-cuprum leading-relaxed">
 						<p>Every business has different technology needs. Businesses of all sizes, in most industries, use enough computer power to store important data – like client information, website coding, and digital documents – onto backup servers. Most businesses benefit from having their own on-site servers. Down to Earth Technology is a licensed retailer and maintenance center for top equipment like Lenovo servers, and HP and Dell workstations.</p>
 						<p>You could send your information to other IT outsourcing companies, but you may risk exposing your information to threats and slowing it down. Make your business faster, more secure, and ready for tomorrow's challenges with one of our Lenovo, Dell, or HP servers.</p>
 						<p>Keep your business running on solid ground with a customized server and computer workstation from Down to Earth Technology.</p>
@@ -153,11 +158,11 @@ import ArrowPath from 'astro-heroicons/solid/ArrowPath.astro';
 			<!-- Row 2: Image 1/3, Text 2/3 -->
 			<div class="grid md:grid-cols-3 gap-8 mb-12">
 				<div class="md:col-span-1 md:order-1 order-2">
-					<img src="/media/it-solutions.jpg" alt="IT Solutions" class="w-full h-auto rounded shadow-lg" />
+					<img src="/media/it-solutions.jpg" alt="IT Solutions" class="w-full h-auto" />
 				</div>
 				<div class="md:col-span-2 md:order-2 order-1">
-					<h3 class="font-montserrat font-bold text-white mb-4" class="text-[23px] tracking-[-1px] leading-[24.15px]">Experienced IT Consulting Professionals</h3>
-					<div class="space-y-4 text-white text-xl font-cuprum leading-relaxed">
+					<h3 class="font-montserrat font-bold text-white mb-4 text-[23px] tracking-[-1px] leading-tight">Experienced <a href="/managed-it-consulting-services-and-support" class="text-[#E24D3D] hover:underline">IT Consulting Professionals</a></h3>
+					<div class="space-y-4 text-white text-lg font-cuprum leading-relaxed">
 						<p>As an authorized retailer, Down to Earth Technology not only has a variety of rack, tower, and blade servers in stock, our IT consulting experts will help you determine what workstation design is best suited for your business' size and needs. Different server designs offer multiple capacity and speed options, and our technicians will gladly answer all your questions about our servers' specifications.</p>
 						<p>Ask our IT support staff about enhancements and customizable components. Ask them about maintenance packages and regular remote access IT services. Ask them about Lenovo servers' three-year on-site warranty. Ask about our staff's training and expertise with every type of server we sell and workstation we build.</p>
 						<p>Ask us about our network support services – not only do our technicians assist you with building and installing the right server system for your company, we can perform remote access for backup and reboot services, as well as all general server maintenance. We believe in our HP, Lenovo, and Dell servers, and we support our clients.</p>
@@ -169,33 +174,32 @@ import ArrowPath from 'astro-heroicons/solid/ArrowPath.astro';
 			<!-- Row 3: Text 2/3, Image 1/3 -->
 			<div class="grid md:grid-cols-3 gap-8">
 				<div class="md:col-span-2">
-					<h3 class="font-montserrat font-bold text-white mb-4" class="text-[23px] tracking-[-1px] leading-[24.15px]">An Investment for Your Business and Your Future</h3>
-					<div class="space-y-4 text-white text-xl font-cuprum leading-relaxed">
+					<h3 class="font-montserrat font-bold text-white mb-4 text-[23px] tracking-[-1px] leading-tight">An Investment for Your Business and Your Future</h3>
+					<div class="space-y-4 text-white text-lg font-cuprum leading-relaxed">
 						<p>Many businesses don't think they need servers at their properties. Today's easy access to "cloud storage" can be tempting, although many don't understand it.</p>
-						<p>"Cloud computing" stores valuable data from your business on someone else's server, in another location outside of your company's control. Why send your sensitive data elsewhere when you can have your own Dell, HP, or Lenovo servers onsite?</p>
+						<p>"<a href="https://aws.amazon.com/what-is-cloud-computing/" class="text-[#E24D3D] hover:underline">Cloud computing</a>" stores valuable data from your business on someone else's server, in another location outside of your company's control. Why send your sensitive data elsewhere when you can have your own Dell, HP, or Lenovo servers onsite?</p>
 						<p>A custom server station protects your business' data. The right combination of high-end servers makes all your business operations smoother and faster – no one is ever waiting or delayed by "technical difficulties." Consult with Down to Earth's experienced computer network support specialists to build the Lenovo, Dell, or HP servers that will allow your technology to expand as your business grows.</p>
 						<p>Don't risk your sensitive business data in the cloud: Keep it on solid ground with Down to Earth Technology.</p>
 					</div>
 				</div>
 				<div class="md:col-span-1">
-					<img src="/media/it-support.jpg" alt="IT Support" class="w-full h-auto rounded shadow-lg" />
+					<img src="/media/it-support.jpg" alt="IT Support" class="w-full h-auto" />
 				</div>
-			</div>
 			</div>
 		</div>
 	</section>
 
 	<!-- Section 6: Business Surveillance Systems Detailed -->
-	<section class="relative py-20" class="bg-white/95">
+	<section class="relative py-20 bg-white/90">
 		<div class="max-w-[1080px] mx-auto px-4">
-			<h2 class="font-montserrat font-bold mb-12" class="text-[30px] text-[rgb(226,77,61)] tracking-[-1px] leading-[24px]">
-				<a href="/business-surveillance" class="hover:underline">Business Surveillance Systems</a>
+			<h2 class="font-montserrat font-bold mb-12 text-[30px] text-[#E24D3D] tracking-[-1px] leading-tight">
+				<a href="/business-surveillance-systems" class="hover:underline">Business Surveillance Systems</a>
 			</h2>
 
 			<div class="grid md:grid-cols-4 gap-8 mb-12">
 				<div class="md:col-span-3">
-					<h3 class="font-montserrat font-bold mb-4" class="text-[23px] text-[rgb(49,100,138)] tracking-[-1px] leading-[24.15px]">IP Camera Systems for Your Property</h3>
-					<div class="space-y-4 text-gray-800 text-xl font-cuprum leading-relaxed">
+					<h3 class="font-montserrat font-bold mb-4 text-[23px] text-[#31648a] tracking-[-1px] leading-tight"><a href="/business-surveillance-systems" class="hover:underline">IP Camera Systems</a> for Your Property</h3>
+					<div class="space-y-4 text-gray-700 text-lg font-cuprum leading-relaxed">
 						<p>You've worked hard to build your business to what it is, but your company can be under threat from natural disasters, criminals, and more. From our offices in Waco, Texas, Down to Earth Technology is one of the best national IT consulting companies to advise you how to protect your property with a selection of top-of-the-line business surveillance systems.</p>
 						<p>Whether it's one location or many, a complex retail outlet with a lot of face-to-face customers, or a storage facility that houses millions of dollars in valuables – Down to Earth Technology has helped hundreds of businesses customize cameras that allow the perfect business activity monitoring solutions.</p>
 						<p>Our selection of top of the line surveillance and IP camera systems and equipment includes:</p>
@@ -215,8 +219,8 @@ import ArrowPath from 'astro-heroicons/solid/ArrowPath.astro';
 			</div>
 
 			<div>
-				<h3 class="font-montserrat font-bold mb-4" class="text-[23px] text-[rgb(49,100,138)] tracking-[-1px] leading-[24.15px]">Backup Servers</h3>
-				<div class="space-y-4 text-gray-800 text-xl font-cuprum leading-relaxed">
+				<h3 class="font-montserrat font-bold mb-4 text-[23px] text-[#31648a] tracking-[-1px] leading-tight">Backup Servers</h3>
+				<div class="space-y-4 text-gray-700 text-lg font-cuprum leading-relaxed">
 					<p>Having the best IP camera systems and business monitoring in place is a great first step. The cameras installed at your property will help you monitor all your business' activities, which produces a lot of data. Business owners and managers are busy, and often prefer to save important data and documents for later. With a camera-based business activity monitoring system in place, your business needs somewhere to store that data, for later retrieval and review.</p>
 					<p>Down to Earth Technology has been creating customers surveillance systems that include digital backups onto customized server workstations, which can be kept onsite at your property or at a secure remote location. Offering a selection of the best Lenovo servers, Dell servers, and HP servers to suit any business industry, we create solid business networks that support all a business' computer IT services – including proactive and automated data storage and backup for all our business camera monitoring systems.</p>
 					<p>Cameras record data around the clock. Cameras will see everything on your property, from multiple angles. The right backup servers will help you make the most of your cameras and business surveillance systems.</p>
@@ -228,20 +232,20 @@ import ArrowPath from 'astro-heroicons/solid/ArrowPath.astro';
 	<!-- Section 7: IT Consulting Services -->
 	<section class="relative py-20 bg-white">
 		<div class="max-w-[1080px] mx-auto px-4">
-			<h2 class="font-montserrat font-bold mb-12" class="text-[30px] text-[rgb(226,77,61)] tracking-[-1px] leading-[24px]">
+			<h2 class="font-montserrat font-bold mb-12 text-[30px] text-[#E24D3D] tracking-[-1px] leading-tight">
 				<a href="/managed-it-consulting-services-and-support" class="hover:underline">IT Consulting Services</a>
 			</h2>
 
 			<div class="grid md:grid-cols-3 gap-8">
 				<div>
 					<div class="flex justify-center mb-6">
-						<div class="rounded-full p-6" class="border-2 border-[#95c3e3]">
+						<div class="rounded-full p-6 border-2 border-[#95c3e3]">
 							<Cog6Tooth class="w-12 h-12 text-[#e24d3d]" />
 						</div>
 					</div>
-					<h4 class="font-montserrat font-bold mb-4 text-center" class="text-lg text-[rgb(49,100,138)] tracking-[-1px]">Experts in Enterprise IT Services Management</h4>
+					<h4 class="font-montserrat font-bold mb-4 text-[22px] text-[#31648a] tracking-[-1px]">Experts in Enterprise IT Services Management</h4>
 					<img src="/media/computer-support-services.jpg" alt="Computer Support Services" class="w-full h-auto rounded shadow-lg mb-4" />
-					<div class="space-y-4 text-gray-800 text-xl font-cuprum leading-relaxed">
+					<div class="space-y-4 text-gray-700 text-lg font-cuprum leading-relaxed">
 						<p>At Down to Earth Technology, we believe that it takes years of experience and valuable training to become expert managed IT service providers; and being the best means never resting. Our clients range from needing computer systems customized for medical and dental IT support, to needing the best POS registers and inventory systems. Whatever your enterprise, Down to Earth Technology provides IT Consulting to keep your technology in line with your business goals.</p>
 						<p>Need protection for your business?</p>
 						<p>Down to Earth Technology customizes your IT network in more ways than building the right computers for you. We can enhance all your computers and networks with anti-virus software, malware protection, password protection, encryption, and more.</p>
@@ -252,13 +256,13 @@ import ArrowPath from 'astro-heroicons/solid/ArrowPath.astro';
 
 				<div>
 					<div class="flex justify-center mb-6">
-						<div class="rounded-full p-6" class="border-2 border-[#95c3e3]">
+						<div class="rounded-full p-6 border-2 border-[#95c3e3]">
 							<Lifebuoy class="w-12 h-12 text-[#e24d3d]" />
 						</div>
 					</div>
-					<h4 class="font-montserrat font-bold mb-4 text-center" class="text-lg text-[rgb(49,100,138)] tracking-[-1px]">Customized IT Support for Working Businesses</h4>
+					<h4 class="font-montserrat font-bold mb-4 text-[22px] text-[#31648a] tracking-[-1px]">Customized IT Support for Working Businesses</h4>
 					<img src="/media/top-it-consulting-firms.jpg" alt="Top IT Consulting Firms" class="w-full h-auto rounded shadow-lg mb-4" />
-					<div class="space-y-4 text-gray-800 text-xl font-cuprum leading-relaxed">
+					<div class="space-y-4 text-gray-700 text-lg font-cuprum leading-relaxed">
 						<p>Every company needs unique business IT solutions. With ideal IT service management, your company can function like it has a full IT department, even if it doesn't. While IT outsourcing services may seem scary, the best IT consulting enhances the way your business runs. Your employees, your clients, and your suppliers should all benefit from your managed IT support services.</p>
 						<p>From our offices in Waco, Texas, Down to Earth Technology supports clients around the world. We build custom computer workstations and consult with clients about what hardware, software, and apps will give them the best results for their business. With our competitive managed IT services pricing, we provide the greatest variety of IT support. From high-end graphics processors to business point of sale (POS) computer systems, our IT services can help businesses with any type of IT needs.</p>
 					</div>
@@ -266,13 +270,13 @@ import ArrowPath from 'astro-heroicons/solid/ArrowPath.astro';
 
 				<div>
 					<div class="flex justify-center mb-6">
-						<div class="rounded-full p-6" class="border-2 border-[#95c3e3]">
+						<div class="rounded-full p-6 border-2 border-[#95c3e3]">
 							<ArrowPath class="w-12 h-12 text-[#e24d3d]" />
 						</div>
 					</div>
-					<h4 class="font-montserrat font-bold mb-4 text-center" class="text-lg text-[rgb(49,100,138)] tracking-[-1px]">Proactive and Automatic Behind-the-Scenes Updates</h4>
+					<h4 class="font-montserrat font-bold mb-4 text-[22px] text-[#31648a] tracking-[-1px]">Proactive and Automatic Behind-the-Scenes Updates</h4>
 					<img src="/media/corporate-data-backup.jpg" alt="Corporate Data Backup" class="w-full h-auto rounded shadow-lg mb-4" />
-					<div class="space-y-4 text-gray-800 text-xl font-cuprum leading-relaxed">
+					<div class="space-y-4 text-gray-700 text-lg font-cuprum leading-relaxed">
 						<p>When your computer systems are clean, optimized, and protected, they work best. That's simply fact. Down to Earth Technology' technicians customize the computer system and security features you need, then instruct your system to take care of itself. We manage your system to perform automated backups and remove unnecessary files that slow down your workflow. You don't have to do a thing.</p>
 						<p>Following the lead top IT managed services providers, we incorporate the newest techniques for success into our IT consulting operations, using our industry's best policies to benefit our clients. We manage, store, and report on your business' IT data, acting proactively behind-the-scenes to keep you focused on your main production: your business.</p>
 						<p>Down to Earth is unlike other IT services companies in Waco, Texas, or across the nation. Because we pledge to keep your business at its best, we keep your technology running solid. That's the Down to Earth way to do IT consulting.</p>
@@ -283,16 +287,16 @@ import ArrowPath from 'astro-heroicons/solid/ArrowPath.astro';
 	</section>
 
 	<!-- Section 8: Network Support Services -->
-	<section class="relative py-20" class="bg-[rgba(49,100,138,0.9)]">
+	<section class="relative py-20 bg-[#31648a]/90">
 		<div class="max-w-[1080px] mx-auto px-4">
-			<h2 class="font-montserrat font-bold text-white mb-12" class="text-[30px] tracking-[-1px] leading-[24px]">
-				<a href="/network-support" class="hover:underline text-white">Network Support Services</a>
+			<h2 class="font-montserrat font-bold text-white mb-12 text-[30px] tracking-[-1px] leading-tight">
+				<a href="/computer-network-support" class="hover:underline text-white">Network Support Services</a>
 			</h2>
 
 			<div class="grid md:grid-cols-2 gap-8">
 				<div>
-					<h3 class="font-montserrat font-bold text-white mb-4" class="text-[23px] tracking-[-1px] leading-[24.15px]">Build a custom computer and server network</h3>
-					<div class="space-y-4 text-white text-xl font-cuprum leading-relaxed">
+					<h3 class="font-montserrat font-bold text-white mb-4 text-[23px] tracking-[-1px] leading-tight">Build a custom computer and server network</h3>
+					<div class="space-y-4 text-white text-lg font-cuprum leading-relaxed">
 						<p>Every business has different needs for networking their computer systems together. It doesn't matter how many computers, locations, or types of software you have, you need computer network support experts who are familiar with all of them. You need a customized network that supports all the functions of your business, effortlessly.</p>
 						<p>Need any of these IT services?</p>
 						<ul class="list-disc ml-6 space-y-2">
@@ -307,8 +311,8 @@ import ArrowPath from 'astro-heroicons/solid/ArrowPath.astro';
 				</div>
 
 				<div>
-					<h3 class="font-montserrat font-bold text-white mb-4" class="text-[23px] tracking-[-1px] leading-[24.15px]">IT network support starts with security</h3>
-					<div class="space-y-4 text-white text-xl font-cuprum leading-relaxed">
+					<h3 class="font-montserrat font-bold text-white mb-4 text-[23px] tracking-[-1px] leading-tight"><a href="/computer-network-support" class="hover:underline">IT network support</a> starts with security</h3>
+					<div class="space-y-4 text-white text-lg font-cuprum leading-relaxed">
 						<img src="/media/network-support-services.jpg" alt="Network Support Services" class="w-full h-auto rounded shadow-lg mb-4" />
 						<p>Building a custom system gives you the tools to work the way you want, but your network must be secure in order to operate fully. In addition to multiple wired or wireless networks that are password secured or designed for secure public use, you may need heightened security for sensitive data. The best IT network support begins by keeping your network access restricted, and the data you transfer protected. Minimize your calls to network support services and spend more time using a network that works for you.</p>
 						<p>Down to Earth Technology professional IT consulting experts can build firewalls, install layers of encryption, and secure your system with regular automated inspections. We will design proactive measures to keep threats out, and we provide reports on the status of your network security. In case you do need computer network support, give us a call. We're here to answer questions and troubleshoot, including resetting network settings, upgrading components, and clearing your network of threats. We do it because we think peace of mind about your business' digital data is priceless.</p>
@@ -319,10 +323,10 @@ import ArrowPath from 'astro-heroicons/solid/ArrowPath.astro';
 	</section>
 
 	<!-- Section 9: Professional. Innovative. Complete. -->
-	<section class="relative py-20" class="bg-[rgba(226,77,61,0.92)]">
+	<section class="relative py-24 bg-[#E24D3D]/90">
 		<div class="max-w-[1080px] mx-auto px-4">
 			<div class="text-center">
-				<h1 class="font-montserrat font-bold text-white uppercase text-4xl sm:text-5xl md:text-6xl lg:text-[75px]" class="tracking-[-1.875px] leading-none">Professional. Innovative. Complete.</h1>
+				<h1 class="font-montserrat font-bold text-white uppercase text-4xl sm:text-5xl md:text-6xl lg:text-[75px] tracking-[-1.875px] leading-none">Professional. Innovative. Complete.</h1>
 			</div>
 		</div>
 	</section>
@@ -331,11 +335,11 @@ import ArrowPath from 'astro-heroicons/solid/ArrowPath.astro';
 	<section class="relative py-20 bg-white">
 		<div class="max-w-[1080px] mx-auto px-4">
 			<div>
-				<h2 class="font-montserrat font-bold mb-6" class="text-[30px] text-[rgb(226,77,61)] tracking-[-1px] leading-[24px]">
+				<h2 class="font-montserrat font-bold mb-6 text-[30px] text-[#E24D3D] tracking-[-1px] leading-tight">
 					Choose the <a href="/managed-it-consulting-services-and-support" class="hover:underline">IT Tech Support</a> Specialists Who Do It All
 				</h2>
 
-				<div class="space-y-4 text-gray-800 text-xl font-cuprum leading-relaxed">
+				<div class="space-y-4 text-gray-700 text-lg font-cuprum leading-relaxed">
 					<p>Today's world of technology is ever-changing, moving faster than any time in history. Your business can't afford to be slowed down by technical issues. You can't afford to lose money because of faulty computers, networks, or servers. With Down to Earth Technology, you won't have to.</p>
 					<p>Keeping your business running on solid ground means providing you the best IT consulting, the best business IT solutions, and the best advice from experts who have years of knowledge across all IT services. Although our offices are in Waco, Texas, we serve clients around the world as if they were right down the street.</p>
 					<p>We know about servers. We know about networks. We know about custom high-end computer systems. We know about software.</p>

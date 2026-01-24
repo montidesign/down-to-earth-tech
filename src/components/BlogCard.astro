@@ -1,0 +1,41 @@
+---
+interface Props {
+	title: string;
+	slug: string;
+	excerpt?: string;
+	featuredImage?: string;
+	featuredImageAlt?: string;
+}
+
+const { title, slug, excerpt, featuredImage, featuredImageAlt } = Astro.props;
+---
+
+<article class="bg-white rounded shadow-md overflow-hidden flex flex-col h-full">
+	{featuredImage && (
+		<a href={`/${slug}/`} class="block">
+			<img
+				src={featuredImage}
+				alt={featuredImageAlt || title}
+				class="w-full h-48 object-cover"
+			/>
+		</a>
+	)}
+	<div class="p-6 flex flex-col flex-1 text-center">
+		<h2 class="font-montserrat font-bold text-xl text-[#333] mb-3 leading-tight">
+			<a href={`/${slug}/`} class="hover:text-[rgb(226,77,61)] transition-colors">
+				{title}
+			</a>
+		</h2>
+		{excerpt && (
+			<p class="text-gray-600 text-base font-cuprum leading-relaxed mb-4 flex-1">
+				{excerpt}
+			</p>
+		)}
+		<a
+			href={`/${slug}/`}
+			class="text-[rgb(49,100,138)] hover:text-[rgb(226,77,61)] font-cuprum text-base transition-colors"
+		>
+			Read More
+		</a>
+	</div>
+</article>

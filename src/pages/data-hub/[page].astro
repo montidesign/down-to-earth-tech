@@ -1,0 +1,124 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Footer from '../../components/Footer.astro';
+import VideoBackground from '../../components/VideoBackground.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+	const allPosts = await getCollection('posts', ({ data }) => !data.draft);
+	const sortedPosts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+	const postsPerPage = 9;
+	const totalPages = Math.ceil(sortedPosts.length / postsPerPage);
+
+	// Generate paths for pages 2 onwards (page 1 is handled by index.astro)
+	return Array.from({ length: totalPages - 1 }, (_, i) => ({
+		params: { page: String(i + 2) },
+		props: {
+			page: i + 2,
+			posts: sortedPosts.slice((i + 1) * postsPerPage, (i + 2) * postsPerPage),
+			totalPages,
+		},
+	}));
+}
+
+const { page, posts, totalPages } = Astro.props;
+---
+
+<VideoBackground />
+
+<Layout title={`Data Hub - Page ${page} - Down To Earth Technology`}>
+	<!-- Lead Capture Form -->
+	<section class="relative mt-[173px] bg-[rgb(226,77,61)]">
+		<div class="max-w-[1080px] mx-auto px-4 py-8">
+			<div class="flex flex-col md:flex-row items-center gap-6">
+				<div class="flex-shrink-0">
+					<img
+						src="/media/it-service-management.jpg"
+						alt="IT Service Management"
+						class="w-32 h-32 object-cover rounded"
+					/>
+				</div>
+				<div class="flex-1 text-white">
+					<h2 class="font-montserrat font-bold text-2xl mb-2">Need Help? Get in Touch!</h2>
+					<p class="font-cuprum text-lg">
+						If you've got any question, our expert IT team is available to help. Fill in your name, email address, and phone number and we will respond quickly.
+					</p>
+				</div>
+			</div>
+			<form action="/contact.php" method="POST" class="mt-6">
+				<div class="flex flex-col md:flex-row gap-4">
+					<input
+						type="text"
+						name="name"
+						placeholder="Name"
+						required
+						class="flex-1 px-4 py-3 rounded text-gray-800 font-cuprum placeholder:text-[rgb(226,77,61)]"
+					/>
+					<input
+						type="email"
+						name="email"
+						placeholder="Email"
+						required
+						class="flex-1 px-4 py-3 rounded text-gray-800 font-cuprum placeholder:text-[rgb(226,77,61)]"
+					/>
+					<input
+						type="tel"
+						name="phone"
+						placeholder="Phone"
+						class="flex-1 px-4 py-3 rounded text-gray-800 font-cuprum placeholder:text-[rgb(226,77,61)]"
+					/>
+				</div>
+				<div class="mt-4">
+					<button
+						type="submit"
+						class="w-full bg-[rgb(49,100,138)] hover:bg-[rgb(38,78,108)] text-white font-montserrat font-bold uppercase py-3 rounded transition-colors"
+					>
+						Get Advice Now
+					</button>
+				</div>
+			</form>
+		</div>
+	</section>
+
+	<!-- Blog Posts Grid -->
+	<section class="relative py-12 bg-white/95">
+		<div class="max-w-[1080px] mx-auto px-4">
+			<div class="grid md:grid-cols-3 gap-6 mb-12">
+				{posts.map(post => (
+					<BlogCard
+						title={post.data.title}
+						slug={post.slug}
+						excerpt={post.data.excerpt || post.data.description}
+						featuredImage={post.data.featuredImage}
+						featuredImageAlt={post.data.featuredImageAlt}
+					/>
+				))}
+			</div>
+
+			{/* Pagination */}
+			<nav class="flex justify-center items-center gap-4">
+				<a
+					href={page === 2 ? '/data-hub/' : `/data-hub/${page - 1}/`}
+					class="text-[rgb(49,100,138)] hover:text-[rgb(226,77,61)] font-cuprum text-lg transition-colors"
+				>
+					« Newer Entries
+				</a>
+				<span class="text-gray-500 font-cuprum">
+					Page {page} of {totalPages}
+				</span>
+				{page < totalPages && (
+					<a
+						href={`/data-hub/${page + 1}/`}
+						class="text-[rgb(49,100,138)] hover:text-[rgb(226,77,61)] font-cuprum text-lg transition-colors"
+					>
+						Older Entries »
+					</a>
+				)}
+			</nav>
+		</div>
+	</section>
+
+	<Footer />
+</Layout>

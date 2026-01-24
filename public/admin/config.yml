@@ -1,0 +1,141 @@
+# Decap CMS Configuration for Down to Earth Technology Blog
+
+# Local backend for development (requires: npm run cms)
+local_backend: true
+
+# GitHub backend for production
+backend:
+  name: github
+  repo: montidesign/down-to-earth-tech  # UPDATE: your-username/your-repo
+  branch: master
+  base_url: https://down-to-earth-tech.pages.dev  # UPDATE: your Cloudflare Pages URL
+  auth_endpoint: /api/auth
+
+# Media files configuration
+media_folder: "public/media/blog"
+public_folder: "/media/blog"
+
+# Slug configuration
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "-"
+
+# Collections
+collections:
+  - name: "posts"
+    label: "Blog Posts"
+    folder: "src/content/posts"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        required: true
+
+      - label: "Meta Description (SEO)"
+        name: "description"
+        widget: "text"
+        required: false
+        hint: "Brief description for search engines (150-160 characters ideal)"
+
+      - label: "Excerpt"
+        name: "excerpt"
+        widget: "text"
+        required: false
+        hint: "Short summary shown in post archives and cards"
+
+      - label: "Publish Date"
+        name: "pubDate"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        required: true
+
+      - label: "Author"
+        name: "author"
+        widget: "select"
+        options:
+          - "Down to Earth Technology"
+          - "Maya Hatt"
+          - "Gerald Reid"
+          - "Eli Fulton"
+          - "Nicole Urban"
+          - "Erika White"
+          - "Mae Lucas"
+        default: "Down to Earth Technology"
+
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - "Business Camera Systems"
+          - "Business Server"
+          - "Business Surveillance Networks"
+          - "Computer Network Support"
+          - "IT Consulting"
+          - "IT Network Support"
+          - "Lenovo Servers"
+          - "Managed IT Services"
+          - "Managed Software IT Consulting Services"
+          - "Point of Sale Systems (POS)"
+          - "Remote Access Server Support"
+          - "Remote IT Services"
+        required: true
+
+      - label: "Category Slug"
+        name: "categorySlug"
+        widget: "select"
+        options:
+          - label: "Business Camera Systems"
+            value: "business-camera-systems"
+          - label: "Business Server"
+            value: "business-server"
+          - label: "Business Surveillance Networks"
+            value: "business-surveillance-networks"
+          - label: "Computer Network Support"
+            value: "computer-network-support"
+          - label: "IT Consulting"
+            value: "it-consulting"
+          - label: "IT Network Support"
+            value: "it-network-support"
+          - label: "Lenovo Servers"
+            value: "lenovo-servers"
+          - label: "Managed IT Services"
+            value: "managed-it-services"
+          - label: "Managed Software IT Consulting Services"
+            value: "managed-software-it-consulting-services"
+          - label: "Point of Sale Systems (POS)"
+            value: "point-of-sale-systems-pos"
+          - label: "Remote Access Server Support"
+            value: "remote-access-server-support"
+          - label: "Remote IT Services"
+            value: "remote-it-services"
+        required: true
+
+      - label: "Featured Image"
+        name: "featuredImage"
+        widget: "image"
+        required: false
+        hint: "Main image displayed at top of post and in archive cards"
+
+      - label: "Featured Image Alt Text"
+        name: "featuredImageAlt"
+        widget: "string"
+        required: false
+        hint: "Describe the image for accessibility and SEO"
+
+      - label: "Draft"
+        name: "draft"
+        widget: "boolean"
+        default: false
+        hint: "Draft posts won't appear on the live site"
+
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        required: true

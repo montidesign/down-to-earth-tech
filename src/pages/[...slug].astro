@@ -1,0 +1,83 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+import VideoBackground from '../components/VideoBackground.astro';
+import BlogSidebar from '../components/BlogSidebar.astro';
+import PostMeta from '../components/PostMeta.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+	const posts = await getCollection('posts');
+	return posts.map(post => ({
+		params: { slug: post.slug },
+		props: { post },
+	}));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<VideoBackground />
+
+<Layout title={`${post.data.title} - Down To Earth Technology`}>
+	<section class="relative mt-[173px] py-12 bg-white/95">
+		<div class="max-w-[1080px] mx-auto px-4">
+			<div class="flex flex-col lg:flex-row gap-0">
+				<!-- Main Content -->
+				<article class="lg:w-[79%] lg:pr-[5.5%]">
+					<!-- Post Header -->
+					<header class="mb-8">
+						<h1 class="font-montserrat font-bold text-4xl md:text-5xl lg:text-[68px] text-[rgb(226,77,61)] mb-4 leading-[0.8em] tracking-[-1px] uppercase">
+							{post.data.title}
+						</h1>
+						<PostMeta
+							author={post.data.author}
+							pubDate={post.data.pubDate}
+							category={post.data.category}
+							categorySlug={post.data.categorySlug}
+						/>
+						{post.data.featuredImage && (
+							<img
+								src={post.data.featuredImage}
+								alt={post.data.featuredImageAlt || post.data.title}
+								class="w-full h-auto rounded shadow-lg"
+							/>
+						)}
+					</header>
+
+					<!-- Post Content -->
+					<div class="prose prose-lg max-w-none
+						prose-headings:font-montserrat prose-headings:font-bold prose-headings:tracking-[-1px]
+						prose-h2:text-[rgb(226,77,61)] prose-h2:text-2xl prose-h2:mt-8 prose-h2:mb-4
+						prose-h3:text-[rgb(226,77,61)] prose-h3:text-xl prose-h3:mt-6 prose-h3:mb-3
+						prose-p:font-cuprum prose-p:text-[#666] prose-p:text-xl prose-p:leading-[1.3em] prose-p:mb-[1em]
+						prose-a:text-[#2ea3f2] prose-a:no-underline hover:prose-a:underline
+						prose-ul:font-cuprum prose-ul:text-[#666] prose-ul:text-xl prose-ul:pl-[1em] prose-ul:mb-[1em] prose-ul:leading-[26px]
+						prose-ol:font-cuprum prose-ol:text-[#666] prose-ol:text-xl prose-ol:pl-[1em] prose-ol:mb-[1em] prose-ol:leading-[26px]
+						prose-li:mb-0
+						prose-blockquote:border-l-[5px] prose-blockquote:border-[rgb(226,77,61)] prose-blockquote:bg-transparent prose-blockquote:pl-5 prose-blockquote:py-0 prose-blockquote:my-[20px] prose-blockquote:text-[#666] prose-blockquote:font-cuprum prose-blockquote:not-italic
+						prose-img:rounded prose-img:shadow-lg prose-img:my-6
+						prose-strong:text-[#333]
+					">
+						<Content />
+					</div>
+				</article>
+
+				<!-- Sidebar with vertical divider -->
+				<aside class="lg:w-[21%] lg:border-l lg:border-gray-200 lg:pl-[5.5%]">
+					<BlogSidebar />
+				</aside>
+			</div>
+		</div>
+	</section>
+
+	<Footer />
+</Layout>
+
+<style>
+	/* Additional prose styling overrides */
+	.prose blockquote p {
+		margin: 0;
+	}
+</style>

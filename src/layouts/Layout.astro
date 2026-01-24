@@ -5,11 +5,13 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  isHomepage?: boolean;
 }
 
 const {
   title,
-  description = "Keeping your business running on solid ground"
+  description = "Keeping your business running on solid ground",
+  isHomepage = false
 } = Astro.props;
 ---
 
@@ -25,7 +27,7 @@ const {
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.15.3/dist/cdn.min.js"></script>
   </head>
   <body class="antialiased">
-    <Header />
+    <Header isHomepage={isHomepage} />
     <main>
       <slot />
     </main>
