@@ -1,0 +1,4 @@
+# Cloudflare Pages configuration
+name = "down-to-earth-tech"
+pages_build_output_dir = "dist"
+compatibility_date = "2024-01-01"
