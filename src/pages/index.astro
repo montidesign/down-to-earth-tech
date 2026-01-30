@@ -6,9 +6,42 @@ import VideoBackground from '../components/VideoBackground.astro';
 import Cog6Tooth from 'astro-heroicons/solid/Cog6Tooth.astro';
 import Lifebuoy from 'astro-heroicons/solid/Lifebuoy.astro';
 import ArrowPath from 'astro-heroicons/solid/ArrowPath.astro';
+
+const seoTitle = "Local IT Consulting - Down To Earth Technology | Waco, TX";
+const seoDescription = "Local IT consulting in Waco, TX. Managed IT services, Lenovo/Dell/HP servers, computer network support, and business surveillance systems. Keeping your business running on solid ground since 2014.";
+
+const homeSchema = [
+  {
+    "@type": "WebPage",
+    "@id": "https://downtoearthtech.net/#webpage",
+    "url": "https://downtoearthtech.net/",
+    "name": seoTitle,
+    "isPartOf": { "@id": "https://downtoearthtech.net/#website" },
+    "about": { "@id": "https://downtoearthtech.net/#LocalBusiness" },
+    "description": seoDescription,
+    "inLanguage": "en-US"
+  },
+  {
+    "@type": "Service",
+    "name": "IT Consulting Services",
+    "provider": { "@id": "https://downtoearthtech.net/#LocalBusiness" },
+    "serviceType": ["Managed IT Services", "Server Installation", "Network Support", "Business Surveillance"],
+    "areaServed": {
+      "@type": "State",
+      "name": "Central Texas"
+    }
+  }
+];
 ---
 
-<Layout title="Down to Earth Technology - IT Services & Support" isHomepage={true}>
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  canonical="/"
+  ogImage="/media/it-consulting.png"
+  schema={homeSchema}
+  isHomepage={true}
+>
 	<HeroBanner />
 
 	<!-- Section 1: Business IT Managed Services -->
@@ -70,7 +103,7 @@ import ArrowPath from 'astro-heroicons/solid/ArrowPath.astro';
 					</div>
 
 					<!-- Image: Computer grill and power button -->
-					<img src="/media/lenovo-servers.jpg" alt="Lenovo Servers" class="w-full h-auto" />
+					<img src="/media/lenovo-servers.jpg" alt="Lenovo Servers" class="w-full h-auto" loading="lazy" decoding="async" />
 
 					<!-- Network Support -->
 					<div>
@@ -90,12 +123,12 @@ import ArrowPath from 'astro-heroicons/solid/ArrowPath.astro';
 					</div>
 
 					<!-- Image: Woman standing next to server rack -->
-					<img src="/media/computer-network-support.jpg" alt="Computer Network Support" class="w-full h-auto" />
+					<img src="/media/computer-network-support.jpg" alt="Computer Network Support" class="w-full h-auto" loading="lazy" decoding="async" />
 				</div>
 
 				<!-- Right Column -->
 				<div>
-					<img src="/media/business-surveillance-systems.jpg" alt="Business Surveillance Systems" class="w-full h-auto mb-4" />
+					<img src="/media/business-surveillance-systems.jpg" alt="Business Surveillance Systems" class="w-full h-auto mb-4" loading="lazy" decoding="async" />
 					<h3 class="font-montserrat font-bold text-white mb-4 text-[23px] tracking-[-1px] leading-tight">
 						<a href="/managed-it-consulting-services-and-support" class="hover:underline">IT Consulting Services</a>
 					</h3>
@@ -151,14 +184,14 @@ import ArrowPath from 'astro-heroicons/solid/ArrowPath.astro';
 					</div>
 				</div>
 				<div class="md:col-span-1">
-					<img src="/media/dell-servers1.jpg" alt="Dell Servers" class="w-full h-auto rounded shadow-lg" />
+					<img src="/media/dell-servers1.jpg" alt="Dell Servers" class="w-full h-auto rounded shadow-lg" loading="lazy" decoding="async" />
 				</div>
 			</div>
 
 			<!-- Row 2: Image 1/3, Text 2/3 -->
 			<div class="grid md:grid-cols-3 gap-8 mb-12">
 				<div class="md:col-span-1 md:order-1 order-2">
-					<img src="/media/it-solutions.jpg" alt="IT Solutions" class="w-full h-auto" />
+					<img src="/media/it-solutions.jpg" alt="IT Solutions" class="w-full h-auto" loading="lazy" decoding="async" />
 				</div>
 				<div class="md:col-span-2 md:order-2 order-1">
 					<h3 class="font-montserrat font-bold text-white mb-4 text-[23px] tracking-[-1px] leading-tight">Experienced <a href="/managed-it-consulting-services-and-support" class="text-[#E24D3D] hover:underline">IT Consulting Professionals</a></h3>
@@ -183,7 +216,7 @@ import ArrowPath from 'astro-heroicons/solid/ArrowPath.astro';
 					</div>
 				</div>
 				<div class="md:col-span-1">
-					<img src="/media/it-support.jpg" alt="IT Support" class="w-full h-auto" />
+					<img src="/media/it-support.jpg" alt="IT Support" class="w-full h-auto" loading="lazy" decoding="async" />
 				</div>
 			</div>
 		</div>
@@ -213,8 +246,8 @@ import ArrowPath from 'astro-heroicons/solid/ArrowPath.astro';
 					</div>
 				</div>
 				<div class="md:col-span-1 space-y-8">
-					<img src="/media/ip-camera-systems.jpg" alt="IP Camera Systems" class="w-full h-auto rounded shadow-lg" />
-					<img src="/media/surveillance-systems-for-business.jpg" alt="Surveillance Systems for Business" class="w-full h-auto rounded shadow-lg" />
+					<img src="/media/ip-camera-systems.jpg" alt="IP Camera Systems" class="w-full h-auto rounded shadow-lg" loading="lazy" decoding="async" />
+					<img src="/media/surveillance-systems-for-business.jpg" alt="Surveillance Systems for Business" class="w-full h-auto rounded shadow-lg" loading="lazy" decoding="async" />
 				</div>
 			</div>
 
@@ -244,7 +277,7 @@ import ArrowPath from 'astro-heroicons/solid/ArrowPath.astro';
 						</div>
 					</div>
 					<h4 class="font-montserrat font-bold mb-4 text-[22px] text-[#31648a] tracking-[-1px]">Experts in Enterprise IT Services Management</h4>
-					<img src="/media/computer-support-services.jpg" alt="Computer Support Services" class="w-full h-auto rounded shadow-lg mb-4" />
+					<img src="/media/computer-support-services.jpg" alt="Computer Support Services" class="w-full h-auto rounded shadow-lg mb-4" loading="lazy" decoding="async" />
 					<div class="space-y-4 text-gray-700 text-lg font-cuprum leading-relaxed">
 						<p>At Down to Earth Technology, we believe that it takes years of experience and valuable training to become expert managed IT service providers; and being the best means never resting. Our clients range from needing computer systems customized for medical and dental IT support, to needing the best POS registers and inventory systems. Whatever your enterprise, Down to Earth Technology provides IT Consulting to keep your technology in line with your business goals.</p>
 						<p>Need protection for your business?</p>
@@ -261,7 +294,7 @@ import ArrowPath from 'astro-heroicons/solid/ArrowPath.astro';
 						</div>
 					</div>
 					<h4 class="font-montserrat font-bold mb-4 text-[22px] text-[#31648a] tracking-[-1px]">Customized IT Support for Working Businesses</h4>
-					<img src="/media/top-it-consulting-firms.jpg" alt="Top IT Consulting Firms" class="w-full h-auto rounded shadow-lg mb-4" />
+					<img src="/media/top-it-consulting-firms.jpg" alt="Top IT Consulting Firms" class="w-full h-auto rounded shadow-lg mb-4" loading="lazy" decoding="async" />
 					<div class="space-y-4 text-gray-700 text-lg font-cuprum leading-relaxed">
 						<p>Every company needs unique business IT solutions. With ideal IT service management, your company can function like it has a full IT department, even if it doesn't. While IT outsourcing services may seem scary, the best IT consulting enhances the way your business runs. Your employees, your clients, and your suppliers should all benefit from your managed IT support services.</p>
 						<p>From our offices in Waco, Texas, Down to Earth Technology supports clients around the world. We build custom computer workstations and consult with clients about what hardware, software, and apps will give them the best results for their business. With our competitive managed IT services pricing, we provide the greatest variety of IT support. From high-end graphics processors to business point of sale (POS) computer systems, our IT services can help businesses with any type of IT needs.</p>
@@ -275,7 +308,7 @@ import ArrowPath from 'astro-heroicons/solid/ArrowPath.astro';
 						</div>
 					</div>
 					<h4 class="font-montserrat font-bold mb-4 text-[22px] text-[#31648a] tracking-[-1px]">Proactive and Automatic Behind-the-Scenes Updates</h4>
-					<img src="/media/corporate-data-backup.jpg" alt="Corporate Data Backup" class="w-full h-auto rounded shadow-lg mb-4" />
+					<img src="/media/corporate-data-backup.jpg" alt="Corporate Data Backup" class="w-full h-auto rounded shadow-lg mb-4" loading="lazy" decoding="async" />
 					<div class="space-y-4 text-gray-700 text-lg font-cuprum leading-relaxed">
 						<p>When your computer systems are clean, optimized, and protected, they work best. That's simply fact. Down to Earth Technology' technicians customize the computer system and security features you need, then instruct your system to take care of itself. We manage your system to perform automated backups and remove unnecessary files that slow down your workflow. You don't have to do a thing.</p>
 						<p>Following the lead top IT managed services providers, we incorporate the newest techniques for success into our IT consulting operations, using our industry's best policies to benefit our clients. We manage, store, and report on your business' IT data, acting proactively behind-the-scenes to keep you focused on your main production: your business.</p>
@@ -313,7 +346,7 @@ import ArrowPath from 'astro-heroicons/solid/ArrowPath.astro';
 				<div>
 					<h3 class="font-montserrat font-bold text-white mb-4 text-[23px] tracking-[-1px] leading-tight"><a href="/computer-network-support" class="hover:underline">IT network support</a> starts with security</h3>
 					<div class="space-y-4 text-white text-lg font-cuprum leading-relaxed">
-						<img src="/media/network-support-services.jpg" alt="Network Support Services" class="w-full h-auto rounded shadow-lg mb-4" />
+						<img src="/media/network-support-services.jpg" alt="Network Support Services" class="w-full h-auto rounded shadow-lg mb-4" loading="lazy" decoding="async" />
 						<p>Building a custom system gives you the tools to work the way you want, but your network must be secure in order to operate fully. In addition to multiple wired or wireless networks that are password secured or designed for secure public use, you may need heightened security for sensitive data. The best IT network support begins by keeping your network access restricted, and the data you transfer protected. Minimize your calls to network support services and spend more time using a network that works for you.</p>
 						<p>Down to Earth Technology professional IT consulting experts can build firewalls, install layers of encryption, and secure your system with regular automated inspections. We will design proactive measures to keep threats out, and we provide reports on the status of your network security. In case you do need computer network support, give us a call. We're here to answer questions and troubleshoot, including resetting network settings, upgrading components, and clearing your network of threats. We do it because we think peace of mind about your business' digital data is priceless.</p>
 					</div>

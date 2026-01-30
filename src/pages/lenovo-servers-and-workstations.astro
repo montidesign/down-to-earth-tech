@@ -2,11 +2,38 @@
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
 import VideoBackground from '../components/VideoBackground.astro';
+
+const seoTitle = "Lenovo Servers & Workstations | Business-Ready Solutions";
+const seoDescription = "Authorized retailer for Lenovo, Dell, and HP servers and workstations in Waco, TX. Racks, towers, blades with 3-year warranty. On-site installation, maintenance, and remote support.";
+
+const pageSchema = [
+  {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "item": { "@id": "https://downtoearthtech.net", "name": "Home" }},
+      { "@type": "ListItem", "position": 2, "item": { "@id": "https://downtoearthtech.net/lenovo-servers-and-workstations/", "name": "Lenovo Servers and Workstations" }}
+    ]
+  },
+  {
+    "@type": "Service",
+    "name": "Server & Workstation Installation",
+    "description": "Authorized retailer for Lenovo, Dell, and HP servers and workstations. Racks, towers, blades with 3-year warranty. On-site installation, maintenance, and remote support.",
+    "url": "https://downtoearthtech.net/lenovo-servers-and-workstations/",
+    "provider": { "@id": "https://downtoearthtech.net/#LocalBusiness" },
+    "serviceType": "Server Installation and Support",
+    "areaServed": { "@type": "State", "name": "Central Texas" }
+  }
+];
 ---
 
 <VideoBackground />
 
-<Layout title="Lenovo Servers & Workstations | Business-Ready Solutions">
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  canonical="/lenovo-servers-and-workstations/"
+  schema={pageSchema}
+>
 	<!-- Banner Section -->
 	<section class="relative mt-[173px] py-14 bg-[rgba(49,100,138,0.9)]">
 		<div class="max-w-[1080px] mx-auto px-4">
@@ -26,7 +53,7 @@ import VideoBackground from '../components/VideoBackground.astro';
 					<h3 class="font-montserrat font-bold text-2xl text-[rgb(49,100,138)] tracking-[-1px]">Keep your business running on solid ground with custom servers and workstations from Down to Earth Technology.</h3>
 				</div>
 				<div>
-					<img src="/media/hp-servers-1.jpg" alt="IT Solutions" class="w-full h-auto rounded shadow-lg" />
+					<img src="/media/hp-servers-1.jpg" alt="IT Solutions" class="w-full h-auto rounded shadow-lg" loading="lazy" decoding="async" />
 				</div>
 			</div>
 		</div>
@@ -48,7 +75,7 @@ import VideoBackground from '../components/VideoBackground.astro';
 					</div>
 
 					<div class="flex items-center justify-center">
-						<img src="/media/custom-servers.jpg" alt="Custom Servers" class="w-full h-auto rounded shadow-lg" />
+						<img src="/media/custom-servers.jpg" alt="Custom Servers" class="w-full h-auto rounded shadow-lg" loading="lazy" decoding="async" />
 					</div>
 
 					<div>
@@ -111,7 +138,7 @@ import VideoBackground from '../components/VideoBackground.astro';
 				</div>
 
 				<div>
-					<img src="/media/computer-network-support-specialists.jpg" alt="Network Support Specialists" class="w-full h-auto rounded shadow-lg" />
+					<img src="/media/computer-network-support-specialists.jpg" alt="Network Support Specialists" class="w-full h-auto rounded shadow-lg" loading="lazy" decoding="async" />
 				</div>
 			</div>
 		</div>
@@ -135,7 +162,7 @@ import VideoBackground from '../components/VideoBackground.astro';
 					<p>Down to Earth Technology, in Waco, Texas, helps businesses of all sizes around the world personalize the servers and computer workstations that are right for them. HP servers or Dell workstations, Lenovo Servers and customizable enhancements: Down to Earth Technology offers only the best to keep your business running solid.</p>
 				</div>
 				<div>
-					<img src="/media/lenovo-workstations.jpg" alt="Lenovo Workstations" class="w-full h-auto rounded shadow-lg" />
+					<img src="/media/lenovo-workstations.jpg" alt="Lenovo Workstations" class="w-full h-auto rounded shadow-lg" loading="lazy" decoding="async" />
 				</div>
 			</div>
 		</div>

@@ -2,11 +2,47 @@
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
 import VideoBackground from '../components/VideoBackground.astro';
+
+const seoTitle = "Business Surveillance Systems - Down To Earth Technology";
+const seoDescription = "Professional business surveillance systems and IP camera installation in Waco, TX. Customized video monitoring, automated backup, mobile access. Protect your business 24/7.";
+
+const pageSchema = [
+  {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "item": { "@id": "https://downtoearthtech.net", "name": "Home" }},
+      { "@type": "ListItem", "position": 2, "item": { "@id": "https://downtoearthtech.net/business-surveillance-systems/", "name": "Business Surveillance Systems" }}
+    ]
+  },
+  {
+    "@type": "Service",
+    "name": "Business Surveillance Systems",
+    "description": "Professional business surveillance systems and business activity monitoring that protect your property. Customize IP camera systems compatible with existing networks, servers, and IT technologies.",
+    "url": "https://downtoearthtech.net/business-surveillance-systems/",
+    "provider": { "@id": "https://downtoearthtech.net/#LocalBusiness" },
+    "serviceType": "Security Systems",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Surveillance Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "IP Camera System Installation" }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Business Video Monitoring" }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Surveillance Data Backup" }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mobile Surveillance Apps" }}
+      ]
+    }
+  }
+];
 ---
 
 <VideoBackground />
 
-<Layout title="Business Surveillance Systems - Down To Earth Technology">
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  canonical="/business-surveillance-systems/"
+  schema={pageSchema}
+>
 	<!-- Banner Section -->
 	<section class="relative mt-[173px] py-14 bg-[rgba(49,100,138,0.9)]">
 		<div class="max-w-[1080px] mx-auto px-4">
@@ -28,11 +64,11 @@ import VideoBackground from '../components/VideoBackground.astro';
 				</div>
 
 				<div>
-					<img src="/media/business-video-surveillance-systems.jpg" alt="Business Surveillance Systems" class="w-full h-auto rounded shadow-lg" />
+					<img src="/media/business-video-surveillance-systems.jpg" alt="Business Surveillance Systems" class="w-full h-auto rounded shadow-lg" loading="lazy" decoding="async" />
 				</div>
 
 				<div>
-					<img src="/media/business-surveillance-camera-systems.jpg" alt="Surveillance Systems for Business" class="w-full h-auto rounded shadow-lg" />
+					<img src="/media/business-surveillance-camera-systems.jpg" alt="Surveillance Systems for Business" class="w-full h-auto rounded shadow-lg" loading="lazy" decoding="async" />
 				</div>
 
 				<div class="space-y-4 text-gray-800 text-xl font-cuprum leading-relaxed">
@@ -131,7 +167,7 @@ import VideoBackground from '../components/VideoBackground.astro';
 					<p>That is how Down to Earth Technology helps keep your business running on solid ground.</p>
 				</div>
 				<div class="md:col-span-1">
-					<img src="/media/business-video-surveillance.jpg" alt="Business Video Surveillance" class="w-full h-auto rounded shadow-lg" />
+					<img src="/media/business-video-surveillance.jpg" alt="Business Video Surveillance" class="w-full h-auto rounded shadow-lg" loading="lazy" decoding="async" />
 				</div>
 			</div>
 		</div>

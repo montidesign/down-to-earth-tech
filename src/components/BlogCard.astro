@@ -17,6 +17,8 @@ const { title, slug, excerpt, featuredImage, featuredImageAlt } = Astro.props;
 				src={featuredImage}
 				alt={featuredImageAlt || title}
 				class="w-full h-48 object-cover"
+				loading="lazy"
+				decoding="async"
 			/>
 		</a>
 	)}

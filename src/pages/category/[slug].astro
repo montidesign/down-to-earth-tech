@@ -37,11 +37,41 @@ const postsPerPage = 6;
 const totalPages = Math.ceil(posts.length / postsPerPage);
 const currentPage = 1;
 const paginatedPosts = posts.slice(0, postsPerPage);
+
+const seoTitle = `${categoryName} - IT Articles & Resources | Down To Earth Technology`;
+const seoDescription = `Browse our ${categoryName} articles and resources. Expert IT insights and tips from Down to Earth Technology in Waco, TX.`;
+
+const pageSchema = [
+  {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "item": { "@id": "https://downtoearthtech.net", "name": "Home" }},
+      { "@type": "ListItem", "position": 2, "item": { "@id": "https://downtoearthtech.net/data-hub/", "name": "Data Hub" }},
+      { "@type": "ListItem", "position": 3, "item": { "@id": `https://downtoearthtech.net/category/${categorySlug}/`, "name": categoryName }}
+    ]
+  },
+  {
+    "@type": "CollectionPage",
+    "name": `${categoryName} Articles`,
+    "description": seoDescription,
+    "url": `https://downtoearthtech.net/category/${categorySlug}/`,
+    "isPartOf": {
+      "@type": "Blog",
+      "name": "Down to Earth Technology Blog",
+      "url": "https://downtoearthtech.net/data-hub/"
+    }
+  }
+];
 ---
 
 <VideoBackground />
 
-<Layout title={`${categoryName} - Down To Earth Technology`}>
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  canonical={`/category/${categorySlug}/`}
+  schema={pageSchema}
+>
 	<section class="relative mt-[173px] py-12 bg-white/95">
 		<div class="max-w-[1080px] mx-auto px-4">
 			<div class="flex flex-col lg:flex-row gap-0">
@@ -61,6 +91,8 @@ const paginatedPosts = posts.slice(0, postsPerPage);
 												src={post.data.featuredImage}
 												alt={post.data.featuredImageAlt || post.data.title}
 												class="w-full h-64 object-cover rounded shadow-lg hover:opacity-90 transition-opacity"
+												loading="lazy"
+												decoding="async"
 											/>
 										</a>
 									)}

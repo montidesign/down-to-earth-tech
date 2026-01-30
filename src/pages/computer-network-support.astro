@@ -2,11 +2,47 @@
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
 import VideoBackground from '../components/VideoBackground.astro';
+
+const seoTitle = "Computer Network Support Svcs. - Down To Earth Technology";
+const seoDescription = "Professional computer network support in Waco, TX. Network security, wireless network setup, encryption, firewall installation. Personalized IT network support for businesses of all sizes.";
+
+const pageSchema = [
+  {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "item": { "@id": "https://downtoearthtech.net", "name": "Home" }},
+      { "@type": "ListItem", "position": 2, "item": { "@id": "https://downtoearthtech.net/computer-network-support/", "name": "Computer Network Support" }}
+    ]
+  },
+  {
+    "@type": "Service",
+    "name": "Computer Network Support Services",
+    "description": "Professional computer network support including network security, wireless setup, encryption, and firewall installation for businesses of all sizes.",
+    "url": "https://downtoearthtech.net/computer-network-support/",
+    "provider": { "@id": "https://downtoearthtech.net/#LocalBusiness" },
+    "serviceType": "Network Support",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Network Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Network Security" }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Wireless Network Setup" }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Network Encryption" }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Firewall Installation" }}
+      ]
+    }
+  }
+];
 ---
 
 <VideoBackground />
 
-<Layout title="Computer Network Support Svcs. - Down To Earth Technology">
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  canonical="/computer-network-support/"
+  schema={pageSchema}
+>
 	<!-- Banner Section -->
 	<section class="relative mt-[173px] py-14 bg-[rgba(49,100,138,0.9)]">
 		<div class="max-w-[1080px] mx-auto px-4">
@@ -21,7 +57,7 @@ import VideoBackground from '../components/VideoBackground.astro';
 		<div class="max-w-[1080px] mx-auto px-4">
 			<!-- Full-width image -->
 			<div class="mb-12">
-				<img src="/media/wireless-network-security-v3.jpg" alt="Wireless Network Security" class="w-full h-auto rounded shadow-lg" />
+				<img src="/media/wireless-network-security-v3.jpg" alt="Wireless Network Security" class="w-full h-auto rounded shadow-lg" loading="lazy" decoding="async" />
 			</div>
 
 			<!-- Two columns for text content -->
@@ -60,7 +96,7 @@ import VideoBackground from '../components/VideoBackground.astro';
 				<div class="space-y-4 text-gray-800 text-xl font-cuprum leading-relaxed">
 					<h3 class="font-montserrat font-bold text-2xl text-[rgb(49,100,138)] tracking-[-1px]">Customized business computer network support</h3>
 					<p>
-						<img src="/media/hp-network-support.jpg" alt="HP Network Support" class="w-full h-auto rounded shadow-lg mb-4" />
+						<img src="/media/hp-network-support.jpg" alt="HP Network Support" class="w-full h-auto rounded shadow-lg mb-4" loading="lazy" decoding="async" />
 					</p>
 					<p>Your business <a href="/it-support-services-real-estate" class="text-[rgb(226,77,61)] hover:underline">can't run without its supporting technology</a>. Technology supports many of the business goals you work toward everyday. We know how important your computers, servers, and network are. We know that your business has its own way of doing things.</p>
 					<p>A personalized approach makes Down to Earth Technology the top network support company in Waco. We design a unique IT system that meets all of your business' needs, then we network it together in the way you need. We install and maintain your entire IT network. We make it secure. We upgrade what you need, when you need.</p>
@@ -73,7 +109,7 @@ import VideoBackground from '../components/VideoBackground.astro';
 				<div class="space-y-4 text-gray-800 text-xl font-cuprum leading-relaxed">
 					<h3 class="font-montserrat font-bold text-2xl text-[rgb(49,100,138)] tracking-[-1px]">Customized business computer network protection</h3>
 					<p>
-						<img src="/media/network-support-company.jpg" alt="Network Support Company" class="w-full h-auto rounded shadow-lg mb-4" />
+						<img src="/media/network-support-company.jpg" alt="Network Support Company" class="w-full h-auto rounded shadow-lg mb-4" loading="lazy" decoding="async" />
 					</p>
 					<p>No matter your business industry, network security is one of your top concerns. You may have only one secure network with one access point, for a few employees, or you may have several secure networks that spread over many office locations. Whatever your business' situation, you need to know that your computers and their wireless networks are protected.</p>
 					<p>When your computer network isn't safe, it's possible your business' documents and records aren't safe. It could be that your business finances become vulnerable. Wireless network security affects your business on every level – from customers to investors – with every business having different needs.</p>
@@ -108,7 +144,7 @@ import VideoBackground from '../components/VideoBackground.astro';
 				</div>
 
 				<div class="md:col-span-2">
-					<img src="/media/it-network-consultants.jpg" alt="IT Network Consultants" class="w-full h-auto rounded shadow-lg" />
+					<img src="/media/it-network-consultants.jpg" alt="IT Network Consultants" class="w-full h-auto rounded shadow-lg" loading="lazy" decoding="async" />
 				</div>
 			</div>
 

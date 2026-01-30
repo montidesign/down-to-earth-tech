@@ -1,0 +1,167 @@
+---
+/**
+ * SEO Component
+ * Handles all meta tags, Open Graph, Twitter Cards, and Schema.org structured data
+ */
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+  ogType?: 'website' | 'article';
+  article?: {
+    publishedTime?: string;
+    modifiedTime?: string;
+    author?: string;
+    section?: string;
+  };
+  schema?: object | object[];
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  canonical = Astro.url.pathname,
+  ogImage = '/media/it-consulting.png',
+  ogType = 'website',
+  article,
+  schema,
+  noindex = false,
+} = Astro.props;
+
+const siteUrl = 'https://downtoearthtech.net';
+const siteName = 'Down to Earth Technology';
+const fullCanonical = canonical.startsWith('http') ? canonical : `${siteUrl}${canonical}`;
+const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
+
+// Default Organization schema (included on all pages)
+const organizationSchema = {
+  "@type": "Organization",
+  "@id": `${siteUrl}/#organization`,
+  "name": "Down To Earth Technology",
+  "url": siteUrl,
+  "logo": {
+    "@type": "ImageObject",
+    "url": `${siteUrl}/media/dte-logo.png`
+  },
+  "sameAs": [
+    "https://www.facebook.com/repaircomputerswaco",
+    "https://www.linkedin.com/company/down-to-earth-technology",
+    "https://www.yelp.com/biz/down-to-earth-technology-waco"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+1-254-523-4304",
+    "contactType": "customer service",
+    "areaServed": "US",
+    "availableLanguage": "English"
+  }
+};
+
+// Default LocalBusiness schema
+const localBusinessSchema = {
+  "@type": "LocalBusiness",
+  "@id": `${siteUrl}/#LocalBusiness`,
+  "name": "Down to Earth Technology",
+  "url": siteUrl,
+  "telephone": "+1-254-523-4304",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "10124 Saddle Creek Rd",
+    "addressLocality": "Waco",
+    "addressRegion": "TX",
+    "postalCode": "76708",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "31.630071",
+    "longitude": "-97.238544"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "09:00",
+    "closes": "16:00"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Waco" },
+    { "@type": "City", "name": "Crawford" },
+    { "@type": "City", "name": "China Spring" },
+    { "@type": "City", "name": "Hewitt" },
+    { "@type": "City", "name": "Woodway" },
+    { "@type": "State", "name": "Central Texas" }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.5",
+    "reviewCount": "3"
+  },
+  "foundingDate": "2014",
+  "slogan": "Keeping your business running on solid ground"
+};
+
+// WebSite schema
+const webSiteSchema = {
+  "@type": "WebSite",
+  "@id": `${siteUrl}/#website`,
+  "url": siteUrl,
+  "name": siteName,
+  "publisher": { "@id": `${siteUrl}/#organization` },
+  "inLanguage": "en-US"
+};
+
+// Combine all schemas
+const combinedSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    organizationSchema,
+    localBusinessSchema,
+    webSiteSchema,
+    ...(Array.isArray(schema) ? schema : schema ? [schema] : [])
+  ]
+};
+---
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+<link rel="canonical" href={fullCanonical} />
+
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={ogType} />
+<meta property="og:url" content={fullCanonical} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={fullOgImage} />
+<meta property="og:site_name" content={siteName} />
+<meta property="og:locale" content="en_US" />
+
+{article && article.publishedTime && (
+  <meta property="article:published_time" content={article.publishedTime} />
+)}
+{article && article.modifiedTime && (
+  <meta property="article:modified_time" content={article.modifiedTime} />
+)}
+{article && article.author && (
+  <meta property="article:author" content={article.author} />
+)}
+{article && article.section && (
+  <meta property="article:section" content={article.section} />
+)}
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={fullCanonical} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={fullOgImage} />
+
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json" set:html={JSON.stringify(combinedSchema)} />

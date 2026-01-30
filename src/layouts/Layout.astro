@@ -1,16 +1,34 @@
 ---
 import Header from '../components/Header.astro';
+import SEO from '../components/SEO.astro';
 import '../styles/global.css';
 
 interface Props {
   title: string;
   description?: string;
+  canonical?: string;
+  ogImage?: string;
+  ogType?: 'website' | 'article';
+  article?: {
+    publishedTime?: string;
+    modifiedTime?: string;
+    author?: string;
+    section?: string;
+  };
+  schema?: object | object[];
+  noindex?: boolean;
   isHomepage?: boolean;
 }
 
 const {
   title,
-  description = "Keeping your business running on solid ground",
+  description = "Local IT consulting in Waco, TX. Managed IT services, Lenovo/Dell/HP servers, computer network support, and business surveillance systems. Keeping your business running on solid ground since 2014.",
+  canonical,
+  ogImage,
+  ogType = 'website',
+  article,
+  schema,
+  noindex = false,
   isHomepage = false
 } = Astro.props;
 ---
@@ -22,11 +40,47 @@ const {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={description} />
-    <title>{title}</title>
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.15.3/dist/cdn.min.js"></script>
+
+    <SEO
+      title={title}
+      description={description}
+      canonical={canonical}
+      ogImage={ogImage}
+      ogType={ogType}
+      article={article}
+      schema={schema}
+      noindex={noindex}
+    />
+
+    <!-- Google Tag Manager (Partytown) -->
+    <script type="text/partytown">
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-52FTSFB');
+    </script>
+
+    <!-- Google Analytics (Partytown) -->
+    <script type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-YMHRRT4SRX"></script>
+    <script type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YMHRRT4SRX');
+    </script>
+
+    <!-- Preconnect to external origins -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
   </head>
   <body class="antialiased">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-52FTSFB"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+
     <Header isHomepage={isHomepage} />
     <main>
       <slot />

@@ -5,11 +5,44 @@ import VideoBackground from '../components/VideoBackground.astro';
 import ShoppingCart from 'astro-heroicons/outline/ShoppingCart.astro';
 import ComputerDesktop from 'astro-heroicons/outline/ComputerDesktop.astro';
 import Lifebuoy from 'astro-heroicons/outline/Lifebuoy.astro';
+
+const seoTitle = "Managed IT Consulting & Support - Down To Earth Technology";
+const seoDescription = "Professional managed IT consulting services in Waco, TX. IT support for small businesses, medical IT, dental IT, corporate solutions. Behind-the-scenes IT management to keep your business running.";
+
+const pageSchema = [
+  {
+    "@type": "BreadcrumbList",
+    "@id": "https://downtoearthtech.net/managed-it-consulting-services-and-support/#breadcrumb",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "item": { "@id": "https://downtoearthtech.net", "name": "Home" }},
+      { "@type": "ListItem", "position": 2, "item": { "@id": "https://downtoearthtech.net/managed-it-consulting-services-and-support/", "name": "Managed IT Consulting Services and Support" }}
+    ]
+  },
+  {
+    "@type": "Service",
+    "@id": "https://downtoearthtech.net/managed-it-consulting-services-and-support/#service",
+    "name": "Managed IT Consulting Services & Support",
+    "description": "Professional managed IT consulting services tailored to your industry and business needs. We work behind-the-scenes like 'techies' to keep your IT services running smoothly.",
+    "url": "https://downtoearthtech.net/managed-it-consulting-services-and-support/",
+    "provider": { "@id": "https://downtoearthtech.net/#LocalBusiness" },
+    "areaServed": [
+      { "@type": "City", "name": "Waco" },
+      { "@type": "State", "name": "Central Texas" }
+    ],
+    "serviceType": "Managed IT Services",
+    "category": "IT Consulting"
+  }
+];
 ---
 
 <VideoBackground />
 
-<Layout title="Managed IT Consulting & Support - Down To Earth Technology">
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  canonical="/managed-it-consulting-services-and-support/"
+  schema={pageSchema}
+>
 	<!-- Banner Section with Blue Background -->
 	<section class="relative mt-[173px] py-14 bg-[rgba(49,100,138,0.9)]">
 		<div class="max-w-[1080px] mx-auto px-4">
@@ -44,7 +77,7 @@ import Lifebuoy from 'astro-heroicons/outline/Lifebuoy.astro';
 					</p>
 				</div>
 				<div>
-					<img src="/media/it-consulting-firms-v2.jpg" alt="" class="w-full h-auto rounded shadow-lg" />
+					<img src="/media/it-consulting-firms-v2.jpg" alt="" class="w-full h-auto rounded shadow-lg" loading="lazy" decoding="async" />
 				</div>
 			</div>
 
@@ -152,7 +185,7 @@ import Lifebuoy from 'astro-heroicons/outline/Lifebuoy.astro';
 					<p>Our IT consulting services are tailored to your industry and your businesses needs. We can help you discover what is slowing down your IT performance, then create a customized solution to keep every size business running at peak speed. If you only have one computer and a POS register, we offer the most personalized IT support service available in Waco, Texas. Or if you need IT coordination across multiple operating systems, multiple office networks, and off-site back-up servers, Down to Earth Technology has a solution that will fit you.</p>
 				</div>
 				<div class="md:col-span-1">
-					<img src="/media/it-outsourcing.jpg" alt="" class="w-full h-auto rounded shadow-lg" />
+					<img src="/media/it-outsourcing.jpg" alt="" class="w-full h-auto rounded shadow-lg" loading="lazy" decoding="async" />
 				</div>
 			</div>
 		</div>
